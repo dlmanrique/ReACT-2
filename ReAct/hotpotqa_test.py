@@ -12,6 +12,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY_2")
 openai.api_base = os.getenv("OPENAI_API_BASE_2")
 openai.api_version = os.getenv("OPENAI_API_VERSION_2")
 
+breakpoint()
 
 def llm(messages, prompt, stop=["\n"]):
     """
