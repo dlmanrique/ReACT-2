@@ -79,7 +79,7 @@ def webthink(question, messages, env, to_print=True):
     return r, info
 
 
-def messages_list_creator():
+def few_shots_messages_list_creator():
     """
     This fuction creates the messages list for the LLM input. It includes the instructions and the few-shot examples
     Params:
@@ -128,7 +128,7 @@ def messages_list_creator():
 
 
 def main():
-    messages = messages_list_creator()
+    messages = few_shots_messages_list_creator()
     #Create env and prepare search agent
     env = wikienv.WikiEnv()
     env = wrappers.HotPotQAWrapper(env, split='dev')
@@ -141,7 +141,7 @@ def main():
     infos = []
     old_time = time.time()
     for i in idxs[:2]:
-        question = env.reset(idx=i)
+        question = env.reset(idx=i).replace('Question: ', '')
         r, info = webthink(question=question, messages=messages, env=env, to_print=True)
         rs.append(info['em'])
         infos.append(info)
