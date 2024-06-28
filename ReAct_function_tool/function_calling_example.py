@@ -2,7 +2,7 @@ import os
 import json
 #from openai import AzureOpenAI
 import openai
-
+from openai.util import convert_to_openai_object
 """client = AzureOpenAI(
     azure_endpoint=os.getenv("OPENAI_API_BASE_2"),
     api_key=os.getenv("OPENAI_API_KEY_2"),
@@ -57,6 +57,7 @@ def run_conversation():
         tools=tools,
         tool_choice="auto",  # auto is default, but we'll be explicit, can be required if it must call one or more tools vía {"type": "function", "function": {"name": "my_function"}}, None if no calls are needed
     )
+    breakpoint()
     response_message = response.choices[0].message
     tool_calls = response_message.tool_calls
     # Step 2: check if the model wanted to call a function
@@ -84,7 +85,7 @@ def run_conversation():
                     "content": function_response, #'{"location": "San Francisco", "temperature": "72", "unit": null}'
                 }
             )  # extend conversation with function response
-
+        breakpoint()
         """[{'role': 'user', 'content': "What's the weather like in San Francisco, Tokyo, and Paris?"}, 
         ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[
         ChatCompletionMessageToolCall(id='call_NRKC1Hd6EW0Ij2t6jSh5U7Ax', function=Function(arguments='{"location": "San Francisco, CA"}', name='get_current_weather'), type='function'), 

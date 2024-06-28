@@ -1,10 +1,13 @@
 import os
-import openai
 import json
 import random
 import time
-
+import string
 import wikienv, wrappers
+import openai
+from openai.util import convert_to_openai_object
+
+import utils
 
 #OpenAI configs
 openai.api_type = os.getenv("OPENAI_API_TYPE_2")
@@ -12,7 +15,18 @@ openai.api_key = os.getenv("OPENAI_API_KEY_2")
 openai.api_base = os.getenv("OPENAI_API_BASE_2")
 openai.api_version = os.getenv("OPENAI_API_VERSION_2")
 
+#Demo retrieval function
 
+def demo_retireval(query:str):
+   return f'The information about {query} is: '
+
+# Function to create artificial ids
+
+def generate_id(prefix="call_", lenght=22):
+    base_id = string.ascii_letters + string.digits
+    id_random = ''.join(random.choices(base_id, k=lenght))
+    return prefix + id_random
+'''
 def llm(messages, prompt, stop=["\n"]):
     """
     This function defines the API call of the llm using openai library. Then it returns the answers
@@ -23,14 +37,33 @@ def llm(messages, prompt, stop=["\n"]):
     Returns:
         -response_text (str): text that the llm return as the answer. It's the assistant role.
     """
+    tools = [
+        {
+            "type": "function",
+            "function": {
+                "name": "demo_retireval",
+                "description": "Retrieve information about something",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "query": {
+                            "type": "string",
+                            "description": "Query that I want to retrieve information",
+                        },
+                    },
+                    "required": ["query"],
+                },
+            },
+        }
+    ]
+    breakpoint()
     messages[-1]["content"] = prompt
     
     response = openai.ChatCompletion.create(
       engine="gpt-35-turbo-16k-cde-aia",
-      messages=messages,
-      temperature=0, #Values betweeen [0,2]. Lower values will make it more focused and deterministic.
-      max_tokens=100,
-      stop=stop
+        messages=messages,
+        tools=tools,
+        tool_choice="auto",
     )
     response_text = response["choices"][0]["message"]["content"]
     return response_text
@@ -113,17 +146,28 @@ def few_shots_messages_list_creator():
     webthink_examples = list(filter(lambda x: x is not None and x != "", webthink_examples.split("\n")))
     #List structure: [Question1, Thought1, Act1, Obs1, ..... , Question_n, Thought_n, Act_n, Obs_n]
     idx = 0
-    
+
     while idx < len(webthink_examples):
-        if "Observation" in webthink_examples[idx]:
-            messages.append({"role": "tool", "content": webthink_examples[idx][15:]})
-            idx += 1
-        elif "Thought" in webthink_examples[idx]:
+        if "Thought" in webthink_examples[idx]:
             messages.append({"role": "assistant", "content": webthink_examples[idx][11:]})
             idx += 1
         elif "Action" in webthink_examples[idx]:
-            messages.append({"role": "assistant", "content": webthink_examples[idx][10:]})
+            search_object =   webthink_examples[idx][webthink_examples[idx].find('[')+1: webthink_examples[idx].find(']')]
+            data = {
+                    "function": {
+                        "arguments": "{\n\"query\": " + search_object + "\"\"\n}",
+                        "name": "demo_retireval"
+                    },
+                    "id": generate_id(),
+                    "type": "function"
+                }
+            openai_object = convert_to_openai_object(data)
+            messages.append(openai_object)
             idx += 1
+        elif "Observation" in webthink_examples[idx]:
+            messages.append({"role": "tool", "content": webthink_examples[idx][15:]})
+            idx += 1
+
         else:
             messages.append({"role": "user", "content": webthink_examples[idx]})
             idx += 1
@@ -152,7 +196,61 @@ def main():
         print(sum(rs), len(rs), sum(rs) / len(rs), (time.time() - old_time) / len(rs))
         print('-----------')
         print()
-
-
 if __name__ == "__main__":
-    main()
+    main()'''
+
+# Mensajes para la conversación
+messages = [
+    {'role': 'system', 'content': 'Solve a question answering task with interleaving Thought, Action, Observation steps. Thought can reason about the current situation, and Action can be three types: \n    (1) Search[entity], which searches the exact entity on Wikipedia and returns the first paragraph if it exists. If not, it will return some similar entities to search.\n    (2) Lookup[keyword], which returns the next sentence containing keyword in the current passage.\n    (3) Finish[answer], which returns the answer and finishes the task.\n    Here are some examples.\n    '},
+    {'role': 'user', 'content': 'What is the elevation range for the area that the eastern sector of the Colorado orogeny extends into?'},
+    {'role': 'assistant', 'content': 'I need to search Colorado orogeny, find the area that the eastern sector of the Colorado orogeny extends into, then find the elevation range of the area.'}
+]
+
+
+tools = [
+        {
+            "type": "function",
+            "function": {
+                "name": "demo_retireval",
+                "description": "Retrieve information about something",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "query": {
+                            "type": "string",
+                            "description": "Query that I want to retrieve information",
+                        },
+                    },
+                    "required": ["query"],
+                },
+            },
+        }
+    ]
+# Función para manejar las llamadas a funciones y añadir la respuesta al historial de mensajes
+def handle_function_call():
+    response = openai.ChatCompletion.create(
+        engine="gpt-35-turbo-16k-cde-aia",
+        messages=messages,
+        tools=tools,
+        tool_choice="auto",
+    )
+    return response
+
+# Simulación de una llamada a función
+data = {
+    "function": {
+        "arguments": "{\n\"query\": " + 'Colorado' + "\"\"\n}",
+        "name": "demo_retireval"
+    },
+    "id": generate_id(),
+    "type": "function"
+    }
+breakpoint()
+# Manejar la llamada a función y obtener la respuesta
+function_response = handle_function_call()
+
+# Añadir la respuesta de la función al historial de mensajes
+messages.append({'role': 'tool', 'content': function_response['content']})
+
+# Añadir el siguiente mensaje del asistente basado en la respuesta de la función
+messages.append({'role': 'assistant', 'content': 'It does not mention the eastern sector. So I need to look up eastern sector.'})
