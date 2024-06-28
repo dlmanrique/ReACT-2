@@ -1,12 +1,18 @@
 import os
 import json
-from openai import AzureOpenAI
+#from openai import AzureOpenAI
+import openai
 
-client = AzureOpenAI(
+"""client = AzureOpenAI(
     azure_endpoint=os.getenv("OPENAI_API_BASE_2"),
     api_key=os.getenv("OPENAI_API_KEY_2"),
     api_version=os.getenv("OPENAI_API_VERSION_2")
-)
+)"""
+
+openai.api_type = os.getenv("OPENAI_API_TYPE_2")
+openai.api_key = os.getenv("OPENAI_API_KEY_2")
+openai.api_base = os.getenv("OPENAI_API_BASE_2")
+openai.api_version = os.getenv("OPENAI_API_VERSION_2")
 
 # Example dummy function hard coded to return the same weather
 # In production, this could be your backend API or an external API
@@ -44,8 +50,9 @@ def run_conversation():
             },
         }
     ]
-    response = client.chat.completions.create(
-        model="gpt-4o-cde-aia",
+    response = openai.ChatCompletion.create(
+        #model="gpt-4o-cde-aia",
+        engine="gpt-35-turbo-16k-cde-aia",
         messages=messages,
         tools=tools,
         tool_choice="auto",  # auto is default, but we'll be explicit, can be required if it must call one or more tools vía {"type": "function", "function": {"name": "my_function"}}, None if no calls are needed
@@ -74,11 +81,21 @@ def run_conversation():
                     "tool_call_id": tool_call.id,
                     "role": "tool",
                     "name": function_name,
-                    "content": function_response,
+                    "content": function_response, #'{"location": "San Francisco", "temperature": "72", "unit": null}'
                 }
             )  # extend conversation with function response
-        second_response = client.chat.completions.create(
-            model="gpt-4o-cde-aia",
+
+        """[{'role': 'user', 'content': "What's the weather like in San Francisco, Tokyo, and Paris?"}, 
+        ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[
+        ChatCompletionMessageToolCall(id='call_NRKC1Hd6EW0Ij2t6jSh5U7Ax', function=Function(arguments='{"location": "San Francisco, CA"}', name='get_current_weather'), type='function'), 
+        ChatCompletionMessageToolCall(id='call_b8EEIBelFppb0bKMA9xlrlV0', function=Function(arguments='{"location": "Tokyo, Japan"}', name='get_current_weather'), type='function'), 
+        ChatCompletionMessageToolCall(id='call_MDlCwfkCA5Swo9LnSlsaYlWC', function=Function(arguments='{"location": "Paris, France"}', name='get_current_weather'), type='function')]), 
+        {'tool_call_id': 'call_NRKC1Hd6EW0Ij2t6jSh5U7Ax', 'role': 'tool', 'name': 'get_current_weather', 'content': '{"location": "San Francisco", "temperature": "72", "unit": null}'}, 
+        {'tool_call_id': 'call_b8EEIBelFppb0bKMA9xlrlV0', 'role': 'tool', 'name': 'get_current_weather', 'content': '{"location": "Tokyo", "temperature": "10", "unit": null}'}, 
+        {'tool_call_id': 'call_MDlCwfkCA5Swo9LnSlsaYlWC', 'role': 'tool', 'name': 'get_current_weather', 'content': '{"location": "Paris", "temperature": "22", "unit": null}'}]
+        """
+        second_response = openai.ChatCompletion.create(
+            engine="gpt-35-turbo-16k-cde-aia",
             messages=messages,
         )  # get a new response from the model where it can see the function response
         return second_response

@@ -113,17 +113,21 @@ def few_shots_messages_list_creator():
     webthink_examples = list(filter(lambda x: x is not None and x != "", webthink_examples.split("\n")))
     #List structure: [Question1, Thought1, Act1, Obs1, ..... , Question_n, Thought_n, Act_n, Obs_n]
     idx = 0
+    
     while idx < len(webthink_examples):
         if "Observation" in webthink_examples[idx]:
-            messages.append({"role": "user", "content": webthink_examples[idx]})
+            messages.append({"role": "tool", "content": webthink_examples[idx][15:]})
             idx += 1
         elif "Thought" in webthink_examples[idx]:
-            messages.append({"role": "assistant", "content": webthink_examples[idx] + "\n" + webthink_examples[idx+1]})
-            idx += 2
+            messages.append({"role": "assistant", "content": webthink_examples[idx][11:]})
+            idx += 1
+        elif "Action" in webthink_examples[idx]:
+            messages.append({"role": "assistant", "content": webthink_examples[idx][10:]})
+            idx += 1
         else:
             messages.append({"role": "user", "content": webthink_examples[idx]})
             idx += 1
-    
+
     return messages
 
 
