@@ -26,7 +26,7 @@ def generate_id(prefix="call_", lenght=22):
     base_id = string.ascii_letters + string.digits
     id_random = ''.join(random.choices(base_id, k=lenght))
     return prefix + id_random
-'''
+
 def llm(messages, prompt, stop=["\n"]):
     """
     This function defines the API call of the llm using openai library. Then it returns the answers
@@ -197,60 +197,4 @@ def main():
         print('-----------')
         print()
 if __name__ == "__main__":
-    main()'''
-
-# Mensajes para la conversación
-messages = [
-    {'role': 'system', 'content': 'Solve a question answering task with interleaving Thought, Action, Observation steps. Thought can reason about the current situation, and Action can be three types: \n    (1) Search[entity], which searches the exact entity on Wikipedia and returns the first paragraph if it exists. If not, it will return some similar entities to search.\n    (2) Lookup[keyword], which returns the next sentence containing keyword in the current passage.\n    (3) Finish[answer], which returns the answer and finishes the task.\n    Here are some examples.\n    '},
-    {'role': 'user', 'content': 'What is the elevation range for the area that the eastern sector of the Colorado orogeny extends into?'},
-    {'role': 'assistant', 'content': 'I need to search Colorado orogeny, find the area that the eastern sector of the Colorado orogeny extends into, then find the elevation range of the area.'}
-]
-
-
-tools = [
-        {
-            "type": "function",
-            "function": {
-                "name": "demo_retireval",
-                "description": "Retrieve information about something",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "query": {
-                            "type": "string",
-                            "description": "Query that I want to retrieve information",
-                        },
-                    },
-                    "required": ["query"],
-                },
-            },
-        }
-    ]
-# Función para manejar las llamadas a funciones y añadir la respuesta al historial de mensajes
-def handle_function_call():
-    response = openai.ChatCompletion.create(
-        engine="gpt-35-turbo-16k-cde-aia",
-        messages=messages,
-        tools=tools,
-        tool_choice="auto",
-    )
-    return response
-
-# Simulación de una llamada a función
-data = {
-    "function": {
-        "arguments": "{\n\"query\": " + 'Colorado' + "\"\"\n}",
-        "name": "demo_retireval"
-    },
-    "id": generate_id(),
-    "type": "function"
-    }
-breakpoint()
-# Manejar la llamada a función y obtener la respuesta
-function_response = handle_function_call()
-
-# Añadir la respuesta de la función al historial de mensajes
-messages.append({'role': 'tool', 'content': function_response['content']})
-
-# Añadir el siguiente mensaje del asistente basado en la respuesta de la función
-messages.append({'role': 'assistant', 'content': 'It does not mention the eastern sector. So I need to look up eastern sector.'})
+    main()
