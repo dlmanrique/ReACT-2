@@ -57,7 +57,7 @@ def llm(messages, prompt):
             },
         }
     ]
-    messages[-1]["content"] = prompt
+
     response = client.chat.completions.create(
         model="gpt-4o-cde-aia",
         messages=messages,
@@ -102,7 +102,6 @@ def webthink(question, messages, env, to_print=True):
                 function_response = function_to_call(
                     query=function_args.get("query")
                 )
-
             messages.append(
                 {
                     "tool_call_id": tool_call.id,
@@ -111,24 +110,12 @@ def webthink(question, messages, env, to_print=True):
                     "content": function_response,
                 }
             )
-        breakpoint() 
-        try:
-            thought, action = response
-        except:
-            print('ohh...', 'thought_action')
-            n_badcalls += 1
-            n_calls += 1
-            #thought = thought_action.strip().split('\n')[0]
-            action = llm(messages, prompt + f"Thought {i}: {thought}\nAction {i}:", stop=[f"\n"]).strip()
-        obs, r, done, info = step(env, action[0].lower() + action[1:])
-        obs = obs.replace('\\n', '')
-        step_str = f"Thought {i}: {thought}\nAction {i}: {action}\nObservation {i}: {obs}\n"
-        prompt += step_str
-        messages[-1]["content"] = prompt
+        
+
         if to_print:
-            print(step_str)
-        if done:
-            break
+            pass
+        
+        
     if not done:
         obs, r, done, info = step(env, "finish[]")
     if to_print:
