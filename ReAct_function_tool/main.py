@@ -90,7 +90,7 @@ def webthink(question, messages, env, to_print=True):
         n_calls += 1
         response = llm(messages, prompt)
         response_message = response.choices[0].message
-        messages.append(response_message)
+        messages.append(response_message.dict())
         tool_calls = response_message.tool_calls
         if tool_calls:
             for tool_call in tool_calls:
@@ -179,7 +179,7 @@ def few_shots_messages_list_creator():
             if "Finish" in  webthink_examples[idx+1]:
                 answer = {
                     'role': 'assistant',
-                    'content': f"The answer is {search_object}"}
+                    'content': f"{webthink_examples[idx][11:]}. Answer[{search_object}]"}
                 messages.append(answer)
                 idx += 1
             else:
