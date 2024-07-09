@@ -5,19 +5,20 @@ import time
 import string
 import wikienv, wrappers
 import openai
-from openai.util import convert_to_openai_object
+from openai import AzureOpenAI
 
 import utils
 
 #OpenAI configs
-openai.api_type = os.getenv("OPENAI_API_TYPE_2")
-openai.api_key = os.getenv("OPENAI_API_KEY_2")
-openai.api_base = os.getenv("OPENAI_API_BASE_2")
-openai.api_version = os.getenv("OPENAI_API_VERSION_2")
+client = AzureOpenAI(
+    azure_endpoint=os.getenv("OPENAI_API_BASE_2"),
+    api_key=os.getenv("OPENAI_API_KEY_2"),
+    api_version=os.getenv("OPENAI_API_VERSION_2")
+)
 
 #Demo retrieval function
 
-def demo_retireval(query:str):
+def demo_retrieval(query:str):
    return f'The information about {query} is: '
 
 # Function to create artificial ids
@@ -27,7 +28,7 @@ def generate_id(prefix="call_", lenght=22):
     id_random = ''.join(random.choices(base_id, k=lenght))
     return prefix + id_random
 
-def llm(messages, prompt, stop=["\n"]):
+def llm(messages, prompt):
     """
     This function defines the API call of the llm using openai library. Then it returns the answers
     Params:
@@ -41,14 +42,14 @@ def llm(messages, prompt, stop=["\n"]):
         {
             "type": "function",
             "function": {
-                "name": "demo_retireval",
-                "description": "Retrieve information about something",
+                "name": "demo_retrieval",
+                "description": """Use this function to retrieve information usefull for you to answer the user question or query.""",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "query": {
                             "type": "string",
-                            "description": "Query that I want to retrieve information",
+                            "description": "Description of the information required to answer a question in plain text based on the user's question or query. If the user's question or query is too complex this input should be a decomposition of the original user question focused on a specific single piece of information.",
                         },
                     },
                     "required": ["query"],
@@ -56,17 +57,15 @@ def llm(messages, prompt, stop=["\n"]):
             },
         }
     ]
-    breakpoint()
     messages[-1]["content"] = prompt
-    
-    response = openai.ChatCompletion.create(
-      engine="gpt-35-turbo-16k-cde-aia",
+    response = client.chat.completions.create(
+        model="gpt-4o-cde-aia",
         messages=messages,
         tools=tools,
         tool_choice="auto",
     )
-    response_text = response["choices"][0]["message"]["content"]
-    return response_text
+    
+    return response
 
 
 def step(env, action):
@@ -79,6 +78,9 @@ def step(env, action):
             attempts += 1
 
 def webthink(question, messages, env, to_print=True):
+    available_tools = {
+            "demo_retrieval": demo_retrieval
+        }
     if to_print:
         print(question)
     prompt = question + "\n"
@@ -86,14 +88,37 @@ def webthink(question, messages, env, to_print=True):
     n_calls, n_badcalls = 0, 0
     for i in range(1, 8):
         n_calls += 1
-        thought_action = llm(messages, prompt + f"Thought {i}:", stop=[f"\nObservation {i}:"])
+        response = llm(messages, prompt)
+        response_message = response.choices[0].message
+        messages.append(response_message)
+        tool_calls = response_message.tool_calls
+        if tool_calls:
+            for tool_call in tool_calls:
+                function_name = tool_call.function.name
+                function_to_call = available_tools[function_name]
+                function_args = json.loads(tool_call.function.arguments)
+                
+                print(f"Tool requested, calling function: "+ str(function_name))
+                function_response = function_to_call(
+                    query=function_args.get("query")
+                )
+
+            messages.append(
+                {
+                    "tool_call_id": tool_call.id,
+                    "role": "tool",
+                    "name": function_name,
+                    "content": function_response,
+                }
+            )
+        breakpoint() 
         try:
-            thought, action = thought_action.strip().split(f"\nAction {i}: ")
+            thought, action = response
         except:
-            print('ohh...', thought_action)
+            print('ohh...', 'thought_action')
             n_badcalls += 1
             n_calls += 1
-            thought = thought_action.strip().split('\n')[0]
+            #thought = thought_action.strip().split('\n')[0]
             action = llm(messages, prompt + f"Thought {i}: {thought}\nAction {i}:", stop=[f"\n"]).strip()
         obs, r, done, info = step(env, action[0].lower() + action[1:])
         obs = obs.replace('\\n', '')
@@ -146,30 +171,39 @@ def few_shots_messages_list_creator():
     webthink_examples = list(filter(lambda x: x is not None and x != "", webthink_examples.split("\n")))
     #List structure: [Question1, Thought1, Act1, Obs1, ..... , Question_n, Thought_n, Act_n, Obs_n]
     idx = 0
-
+    
     while idx < len(webthink_examples):
         if "Thought" in webthink_examples[idx]:
-            messages.append({"role": "assistant", "content": webthink_examples[idx][11:]})
-            idx += 1
-        elif "Action" in webthink_examples[idx]:
-            search_object =   webthink_examples[idx][webthink_examples[idx].find('[')+1: webthink_examples[idx].find(']')]
-            data = {
-                    "function": {
-                        "arguments": "{\n\"query\": " + search_object + "\"\"\n}",
-                        "name": "demo_retireval"
-                    },
-                    "id": generate_id(),
-                    "type": "function"
+            search_object =  webthink_examples[idx+1][webthink_examples[idx+1].find('[')+1: webthink_examples[idx+1].find(']')]
+            #Thought and Action information
+            if "Finish" in  webthink_examples[idx+1]:
+                answer = {
+                    'role': 'assistant',
+                    'content': f"The answer is {search_object}"}
+                messages.append(answer)
+                idx += 1
+            else:
+                data_call = {'role': 'assistant',
+                'content': webthink_examples[idx][11:],
+                'function_call': None,
+                'tool_calls': [{'id': generate_id(),
+                                'function': {'arguments': "{\n\"query\": " + search_object + "\"\"\n}",
+                                                'name': 'demo_retrieval'},
+                                'type': 'function'}]
                 }
-            openai_object = convert_to_openai_object(data)
-            messages.append(openai_object)
-            idx += 1
-        elif "Observation" in webthink_examples[idx]:
-            messages.append({"role": "tool", "content": webthink_examples[idx][15:]})
-            idx += 1
-
+                messages.append(data_call)
+            
+                #Observation information (the response of the retrieval)
+                messages.append({ "role": "tool",
+                                'tool_call_id': data_call['tool_calls'][0]['id'],
+                                "name": data_call['tool_calls'][0]['function']['name'],
+                                "content": webthink_examples[idx+2][15:]})
+                idx += 3
         else:
-            messages.append({"role": "user", "content": webthink_examples[idx]})
+            if "Action" in webthink_examples[idx]:
+                pass
+            else:
+                messages.append({"role": "user", "content": webthink_examples[idx]})
             idx += 1
 
     return messages
