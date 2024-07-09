@@ -6,29 +6,21 @@ import re
 import string
 from collections import Counter
 
-
-
-
-
-
 #Metrics calculation functions
-
+#Function that removes innecesary strings in the answer or gt
 def normalize_answer(s):
   def remove_articles(text):
     return re.sub(r"\b(a|an|the)\b", " ", text)
-  
   def white_space_fix(text):
       return " ".join(text.split())
-
   def remove_punc(text):
       exclude = set(string.punctuation)
       return "".join(ch for ch in text if ch not in exclude)
-
   def lower(text):
       return text.lower()
-
   return white_space_fix(remove_articles(remove_punc(lower(s))))
 
+#Origial ReACT function that calculates the f1_score
 def f1_score(prediction, ground_truth):
   normalized_prediction = normalize_answer(prediction)
   normalized_ground_truth = normalize_answer(ground_truth)
@@ -51,3 +43,11 @@ def f1_score(prediction, ground_truth):
   f1 = (2 * precision * recall) / (precision + recall)
   return f1, precision, recall
 
+#Metric that calculates F1 score and Exact Match. Just need one string as the prediction and
+# it´s respective ground truth
+def get_metrics(pred, gt):
+  if pred is not None:
+    em = (pred == gt)
+    f1 = f1_score(pred, gt)[0]
+    return {'em': int(em), 'f1': f1}
+  return {'em': 0, 'f1': 0}

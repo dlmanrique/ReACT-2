@@ -8,6 +8,7 @@ import openai
 from openai import AzureOpenAI
 
 import utils
+from question_loader import *
 
 #OpenAI configs
 client = AzureOpenAI(
@@ -68,62 +69,6 @@ def llm(messages, prompt):
     return response
 
 
-def step(env, action):
-    attempts = 0
-    while attempts < 10:
-        try:
-            return env.step(action)
-        except requests.exceptions.Timeout:
-            print("-"*30)
-            attempts += 1
-
-def webthink(question, messages, env, to_print=True):
-    available_tools = {
-            "demo_retrieval": demo_retrieval
-        }
-    if to_print:
-        print(question)
-    prompt = question + "\n"
-    messages.append({"role": "user", "content": prompt})
-    n_calls, n_badcalls = 0, 0
-    for i in range(1, 8):
-        n_calls += 1
-        response = llm(messages, prompt)
-        response_message = response.choices[0].message
-        messages.append(response_message.dict())
-        tool_calls = response_message.tool_calls
-        if tool_calls:
-            for tool_call in tool_calls:
-                function_name = tool_call.function.name
-                function_to_call = available_tools[function_name]
-                function_args = json.loads(tool_call.function.arguments)
-                
-                print(f"Tool requested, calling function: "+ str(function_name))
-                function_response = function_to_call(
-                    query=function_args.get("query")
-                )
-            messages.append(
-                {
-                    "tool_call_id": tool_call.id,
-                    "role": "tool",
-                    "name": function_name,
-                    "content": function_response,
-                }
-            )
-        
-
-        if to_print:
-            pass
-        
-        
-    if not done:
-        obs, r, done, info = step(env, "finish[]")
-    if to_print:
-        print(info, '\n')
-    info.update({'n_calls': n_calls, 'n_badcalls': n_badcalls, 'traj': prompt})
-    return r, info
-
-
 def few_shots_messages_list_creator():
     """
     This fuction creates the messages list for the LLM input. It includes the instructions and the few-shot examples
@@ -166,7 +111,7 @@ def few_shots_messages_list_creator():
             if "Finish" in  webthink_examples[idx+1]:
                 answer = {
                     'role': 'assistant',
-                    'content': f"{webthink_examples[idx][11:]}. Answer[{search_object}]"}
+                    'content': f"{webthink_examples[idx][11:]} ANSWER[{search_object}]"}
                 messages.append(answer)
                 idx += 1
             else:
@@ -195,27 +140,78 @@ def few_shots_messages_list_creator():
 
     return messages
 
+def webthink(question, messages, to_print=True):
+    available_tools = {
+            "demo_retrieval": demo_retrieval
+        }
+    
+    if to_print:
+        print(question)
+    prompt = question + "\n"
+    messages.append({"role": "user", "content": prompt})
+
+    #FIXME: remenber to change the maximun times parameter to 8
+    for i in range(1, 4):
+        response = llm(messages, prompt)
+        response_message = response.choices[0].message
+        messages.append(response_message.dict())
+
+        if 'ANSWER' in response_message:
+            break
+
+        tool_calls = response_message.tool_calls
+        if tool_calls:
+            for tool_call in tool_calls:
+                function_name = tool_call.function.name
+                function_to_call = available_tools[function_name]
+                function_args = json.loads(tool_call.function.arguments)
+                
+                print(f"Tool requested, calling function: " + str(function_name))
+                function_response = function_to_call(
+                    query=function_args.get("query")
+                )
+            messages.append({
+                    "tool_call_id": tool_call.id,
+                    "role": "tool",
+                    "name": function_name,
+                    "content": function_response,
+                    })
+        if to_print:
+            #Thought
+            print(f'Thought {i}: {response_message.content}')
+            #Actions
+            if tool_calls:
+                for j, tool_call in enumerate(tool_calls):
+                    print(f'Action {i} - {j} : {tool_call.function}')
+            else:
+                print('No function calling')
+            #Observation
+            print(f'Obs {i}: {messages[-1]['content']}')
+
+    #Return only answer
+    return messages[-1]['content']
+
+
 
 def main():
     messages = few_shots_messages_list_creator()
-    #Create env and prepare search agent
-    env = wikienv.WikiEnv()
-    env = wrappers.HotPotQAWrapper(env, split='dev')
-    env = wrappers.LoggingWrapper(env)
+    #Create QuestionLoader
+    loader = QuestionLoader(split='dev')
 
     idxs = list(range(7405))
     random.Random(233).shuffle(idxs)
 
-    rs = []
-    infos = []
-    old_time = time.time()
     for i in idxs[:2]:
-        question = env.reset(idx=i).replace('Question: ', '')
-        r, info = webthink(question=question, messages=messages, env=env, to_print=True)
-        rs.append(info['em'])
-        infos.append(info)
-        print(sum(rs), len(rs), sum(rs) / len(rs), (time.time() - old_time) / len(rs))
-        print('-----------')
-        print()
+        print('--'*50)
+        question = loader.load_question(idx=i)
+        gt = loader.get_gt(idx=i)
+        answer = webthink(question=question, messages=messages, to_print=True)
+        print('Evaluation Metrics')
+        print(f'Prediction: {answer}')
+        print(f'Ground Truth: {gt}')
+        print(get_metrics(answer, gt))
+
+
+
 if __name__ == "__main__":
     main()
