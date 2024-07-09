@@ -3,7 +3,6 @@ import json
 import random
 import time
 import string
-import wikienv, wrappers
 import openai
 from openai import AzureOpenAI
 
