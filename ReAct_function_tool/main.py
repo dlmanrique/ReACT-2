@@ -161,6 +161,8 @@ def webthink(question, messages, to_print=True):
         tool_calls = response_message.tool_calls
         if tool_calls:
             for tool_call in tool_calls:
+                #FIXME: cases with more than one function calling not working
+                breakpoint()
                 function_name = tool_call.function.name
                 function_to_call = available_tools[function_name]
                 function_args = json.loads(tool_call.function.arguments)
@@ -169,12 +171,12 @@ def webthink(question, messages, to_print=True):
                 function_response = function_to_call(
                     query=function_args.get("query")
                 )
-            messages.append({
-                    "tool_call_id": tool_call.id,
-                    "role": "tool",
-                    "name": function_name,
-                    "content": function_response,
-                    })
+                messages.append({
+                        "tool_call_id": tool_call.id,
+                        "role": "tool",
+                        "name": function_name,
+                        "content": function_response,
+                        })
         if to_print:
             #Thought
             print(f'Thought {i}: {response_message.content}')
