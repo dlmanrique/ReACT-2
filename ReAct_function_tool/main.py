@@ -8,6 +8,7 @@ from openai import AzureOpenAI
 
 import utils
 from question_loader import *
+from retriever import Retriever
 
 #OpenAI configs
 client = AzureOpenAI(
@@ -18,8 +19,10 @@ client = AzureOpenAI(
 
 #Demo retrieval function
 
-def demo_retrieval(query:str):
-   return f'The information about {query} is: '
+def rag(query):
+    retriever = Retriever(k=5) 
+    docs = retriever.retrieve(query=query)
+    return docs.get_texts_as_str(token=f"\n\n\n{100*'#'}\n")
 
 # Function to create artificial ids
 
@@ -42,14 +45,16 @@ def llm(messages, prompt):
         {
             "type": "function",
             "function": {
-                "name": "demo_retrieval",
+                "name": "rag",
                 "description": """Use this function to retrieve information usefull for you to answer the user question or query.""",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "query": {
                             "type": "string",
-                            "description": "Description of the information required to answer a question in plain text based on the user's question or query. If the user's question or query is too complex this input should be a decomposition of the original user question focused on a specific single piece of information.",
+                            "description": """Description of the information required to answer a question in plain text based on the user's question or query. 
+                                            If the user's question or query is too complex this input should be a decomposition of the original 
+                                            user question focused on a specific single piece of information.""",
                         },
                     },
                     "required": ["query"],
@@ -90,12 +95,13 @@ def few_shots_messages_list_creator():
 
     #Load the few-shots examples file
     folder = './prompts/'
-    prompt_file = 'few_shot_examples.json'
+    prompt_file = 'few_shot_examples_spanish.json'
     with open(folder + prompt_file, 'r') as f:
         prompt_dict = json.load(f)
 
     #Examples list
     webthink_examples = prompt_dict['examples']
+    breakpoint()
     #Delete 'Question' in all the examples
     webthink_examples = webthink_examples.replace("Question:", "")
     #Split all the steps in the examples and clean empty values
@@ -119,7 +125,7 @@ def few_shots_messages_list_creator():
                 'function_call': None,
                 'tool_calls': [{'id': generate_id(),
                                 'function': {'arguments': "{\n\"query\": " + search_object + "\"\"\n}",
-                                                'name': 'demo_retrieval'},
+                                                'name': 'rag'},
                                 'type': 'function'}]
                 }
                 messages.append(data_call)
@@ -141,7 +147,7 @@ def few_shots_messages_list_creator():
 
 def webthink(question, messages, to_print=True):
     available_tools = {
-            "demo_retrieval": demo_retrieval
+            "rag": rag
         }
     
     if to_print:
@@ -162,7 +168,6 @@ def webthink(question, messages, to_print=True):
         if tool_calls:
             for tool_call in tool_calls:
                 #FIXME: cases with more than one function calling not working
-                breakpoint()
                 function_name = tool_call.function.name
                 function_to_call = available_tools[function_name]
                 function_args = json.loads(tool_call.function.arguments)
