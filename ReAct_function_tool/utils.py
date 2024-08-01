@@ -46,6 +46,7 @@ def f1_score(prediction, ground_truth):
 #Metric that calculates F1 score and Exact Match. Just need one string as the prediction and
 # it´s respective ground truth
 def get_metrics(pred, gt):
+  breakpoint()
   if pred is not None:
     em = (pred == gt)
     f1 = f1_score(pred, gt)[0]

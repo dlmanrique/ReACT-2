@@ -65,4 +65,4 @@ if __name__ == "__main__":
                " un segundo credito de vivienda?"
 
     docs = retriever.retrieve(query=question)
-    print(docs.get_texts_as_str(token=f"\n\n\n{100*'#'}\n"))
+    #print(docs.get_texts_as_str(token=f"\n\n\n{100*'#'}\n"))

@@ -1,0 +1,33 @@
+[
+    {
+        "role": "user",
+        "content": "Si tengo una vivienda con un valor comercial de 200 SMMLV ubicada en Bogotá, ¿esta se considera una Vivienda de Interés Social (VIS)?\n"
+    },
+    {
+        "content": "Tengo que buscar Vivienda de Interés Social (VIS) y encontrar sus condiciones en Bogotá respecto al precio.",
+        "role": "assistant",
+        "function_call": null,
+        "tool_calls": [
+            {
+                "id": "call_fVnW1QoR8uJAudoussZXbkTz",
+                "function": {
+                    "arguments": "{\n\"query\": \"Vivienda de Interés Social (VIS) Bogotá 2023\"\n}",
+                    "name": "rag"
+                },
+                "type": "function"
+            }
+        ]
+    },
+    {
+        "tool_call_id": "call_fVnW1QoR8uJAudoussZXbkTz",
+        "role": "tool",
+        "name": "rag",
+        "content": "Solicitudes crédito de Vivienda Especial\nInformación general del crédito de vivienda especial\n# Crédito de vivienda especial \nSi un colaborador requiere información sobre el crédito de vivienda especial: Amortización, tasa, tope máximo y los requisitos para este crédito, debemos acompañarlo en el proceso documentado en la siguiente ruta:\nPortal del empleado / Para mí / Mis beneficios / Calidad de vida/ créditos / Crédito de Vivienda especial\nURL: https://bancolombia.sharepoint.com/sites/co-cvi/SitePages/creditoviviendaespecial.aspx\n¿Quiénes pueden solicitar este crédito?\nTodos los empleados de BANCOLOMBIA que se caractericen por su consagración al trabajo, destacado rendimiento y lealtad con la organización, que estén desempeñando cargos del mapa de cargos profesionales, empleados de Filiales en Colombia y los empleados que pertenecen al escalafón operativo, siempre y cuando no utilicen simultáneamente la línea de vivienda convencional y su contrato sea a término indefinido.\n¿Cuánto me prestan?\n- Se podrá financiar el 80% de la vivienda para VIS (Vivienda de interés social, valor comercial hasta 135 SMMLV) y 70% si es no VIS, de acuerdo a la capacidad adquisitiva del colaborador.\n- Préstamos para reformas en viviendas superiores a VIS, se prestará hasta el 100% del valor de la reforma mientras no supere el 70% del avalúo total. Importante: se puede financiar el 100% del valor de la reforma sin superar el 70% del valor del saldo de la deuda de la adquisición más la nueva reforma.\n- Se podrán desembolsar créditos de categoría vivienda (definidos bajo la normatividad de Ley de vivienda) en UVR y en PESOS TASA FIJA\n## Destinación:\nEl Banco ofrece como cartera de vivienda los créditos hipotecarios destinados a: compra de vivienda nueva o usada, reforma o construcción de vivienda, tanto VIS como superior a VIS y\n\n\n####################################################################################################\nSolicitudes crédito de Vivienda Especial\nPago e intereses crédito de vivienda especial\n# Crédito de vivienda especial \n¿Cómo lo pago?\nEl plazo mínimo para el pago de este crédito es de 5 años y el máximo de 20 años. El valor de la cuota se calculará de acuerdo con el tipo de interés que haya elegido el empleado. La cuota deberá cancelarse mensualmente y será el empleado quién defina cómo lo realizará.\n- Amortización: de acuerdo con los planes de amortización establecidos por la ley de vivienda en UVR o PESOS.\n- Plazo: desde 5 hasta 20 años.\nTipo de intereses:\n- Tasa en UVR: UVR + 1.0%, para vivienda de interés social (VIS), UVR + 3.5%, para vivienda diferente a interés social (NO VIS)\n- Tasa crédito pesos tasa fija: 6.30% EA para vivienda de interés social (VIS), 7.00% EA para vivienda diferente a interés social (NO VIS)\n\n\n\n####################################################################################################\n construcción de vivienda para los segmentos plus, preferencial y Banca Colombia.\n## Construcción:\nCondiciones del crédito para empleados del segmento personal plus, el empleado deberá demostrar la propiedad del lote donde se construirá la vivienda y éste deberá estar libre de hipoteca. Se podrá financiar hasta el 70% del presupuesto de obra proyectado por el perito, sin incluir el valor del lote.\nPara empleados del segmento preferencial, se podrá financiar hasta el 70% del presupuesto de obra proyectado por el perito, incluyendo el valor del lote.\n\n\n\n####################################################################################################\nSolicitudes crédito de Vivienda Convencional\nBeneficios extra a los créditos de vivienda convencional\n## Más beneficios\nBancolombia otorgará a los empleados que devenguen hasta 4 smmlv y que resulten beneficiarios de un primer crédito de vivienda, un subsidio para gastos notariales definido en las políticas del Estatuto de Beneficios\n\n\n####################################################################################################\nSolicitudes crédito de Vivienda Especial\nBeneficios extra a los créditos de vivienda especial\n## Subsidio para gastos notariales y de registro\nBancolombia otorgará a los empleados que devenguen hasta 4 smmlv y que resulten beneficiarios de un primer crédito de vivienda, un subsidio para gastos notariales definido en las políticas del Estatuto de Beneficios. "
+    },
+    {
+        "content": "Para que una vivienda sea considerada de Interes Social (VIS), el valor comercial debe ser hasta 135 SMMLV. En este caso, 200 SMMLV > 135 SMMLV. asi que esta vivienda no califica como Vivienda de Interes Social (VIS). ANSWER[No]",
+        "role": "assistant",
+        "function_call": null,
+        "tool_calls": null
+    }
+]

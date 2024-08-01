@@ -5,6 +5,7 @@ import time
 import string
 import openai
 from openai import AzureOpenAI
+import copy
 
 import utils
 from question_loader import *
@@ -18,9 +19,8 @@ client = AzureOpenAI(
 )
 
 #Demo retrieval function
-
-def rag(query):
-    retriever = Retriever(k=5) 
+retriever = Retriever(k=5) 
+def rag(query, retriever=retriever):
     docs = retriever.retrieve(query=query)
     return docs.get_texts_as_str(token=f"\n\n\n{100*'#'}\n")
 
@@ -31,7 +31,7 @@ def generate_id(prefix="call_", lenght=22):
     id_random = ''.join(random.choices(base_id, k=lenght))
     return prefix + id_random
 
-def llm(messages, prompt):
+def llm(messages):
     """
     This function defines the API call of the llm using openai library. Then it returns the answers
     Params:
@@ -85,11 +85,11 @@ def few_shots_messages_list_creator():
     #Create messages list
     messages = []
     #Add first message object (role='system')
-    instruction = """Solve a question answering task with interleaving Thought, Action, Observation steps. Thought can reason about the current situation, and Action can be three types: 
-    (1) Search[entity], which searches the exact entity on Wikipedia and returns the first paragraph if it exists. If not, it will return some similar entities to search.
-    (2) Lookup[keyword], which returns the next sentence containing keyword in the current passage.
-    (3) Finish[answer], which returns the answer and finishes the task.
-    Here are some examples.
+    instruction = """Resolve una pregunta intercalando pasos de Pensamiento, Acción y Observacion.
+      El Pensamiento consiste en razonar y reflexionar sobre la situación actual, y la Accion consiste en realizar consultas de 
+      palabras clave para obtener la informacion necesaria para responder la pregunta. La observacion es analizar la informacion 
+      obtenida en la accion inmediatamente anterior. Cuando obtengas la respuesta a la pregunta, no debe ser en la primer fase
+      de reflexion, dejala en el siguiente formato: ANSWER[respuesta a la pregunta]. Aqui te muestro unos ejemplos de esta metodologia:
     """
     messages.append({"role": "system", "content": instruction})
 
@@ -101,7 +101,6 @@ def few_shots_messages_list_creator():
 
     #Examples list
     webthink_examples = prompt_dict['examples']
-    breakpoint()
     #Delete 'Question' in all the examples
     webthink_examples = webthink_examples.replace("Question:", "")
     #Split all the steps in the examples and clean empty values
@@ -145,7 +144,8 @@ def few_shots_messages_list_creator():
 
     return messages
 
-def webthink(question, messages, to_print=True):
+def webthink(question, example_messages, idx, to_print=True):
+    messages = copy.deepcopy(example_messages)
     available_tools = {
             "rag": rag
         }
@@ -153,26 +153,26 @@ def webthink(question, messages, to_print=True):
     if to_print:
         print(question)
     prompt = question + "\n"
+    original_lenght = len(messages)
     messages.append({"role": "user", "content": prompt})
 
     #FIXME: remenber to change the maximun times parameter to 8
-    for i in range(1, 4):
-        response = llm(messages, prompt)
+    for i in range(1, 8):
+        response = llm(messages)
         response_message = response.choices[0].message
         messages.append(response_message.dict())
-
-        if 'ANSWER' in response_message:
+        
+        if 'ANSWER' in response_message.content:
             break
 
         tool_calls = response_message.tool_calls
         if tool_calls:
             for tool_call in tool_calls:
-                #FIXME: cases with more than one function calling not working
                 function_name = tool_call.function.name
                 function_to_call = available_tools[function_name]
                 function_args = json.loads(tool_call.function.arguments)
                 
-                print(f"Tool requested, calling function: " + str(function_name))
+                print(f"Tool requested, calling function: {function_name} \n Query: {function_args.get("query")}")
                 function_response = function_to_call(
                     query=function_args.get("query")
                 )
@@ -184,38 +184,37 @@ def webthink(question, messages, to_print=True):
                         })
         if to_print:
             #Thought
-            print(f'Thought {i}: {response_message.content}')
+            print(f'Pensamiento {i}: {response_message.content}')
             #Actions
             if tool_calls:
                 for j, tool_call in enumerate(tool_calls):
-                    print(f'Action {i} - {j} : {tool_call.function}')
+                    print(f'Accion {i} - {j} : {tool_call.function}')
             else:
                 print('No function calling')
             #Observation
-            print(f'Obs {i}: {messages[-1]['content']}')
+            print(f'Observacion {i}: {messages[-1]['content']}')
 
+    question_messages_info = messages[original_lenght:]
+    with open(f'Question_solving/question_info{idx}.json', 'w', encoding='utf-8') as json_file:
+        json.dump(question_messages_info, json_file, ensure_ascii=False, indent=4)
     #Return only answer
     return messages[-1]['content']
 
 
 
 def main():
-    messages = few_shots_messages_list_creator()
+    example_messages = few_shots_messages_list_creator()
     #Create QuestionLoader
-    loader = QuestionLoader(split='dev')
-
-    idxs = list(range(7405))
-    random.Random(233).shuffle(idxs)
-
-    for i in idxs[:2]:
-        print('--'*50)
+    loader = QuestionLoader()
+    for i in range(18, 20):
+        print('--'*70)
         question = loader.load_question(idx=i)
         gt = loader.get_gt(idx=i)
-        answer = webthink(question=question, messages=messages, to_print=True)
+        answer = webthink(question, example_messages, idx = i+1, to_print=True)
         print('Evaluation Metrics')
         print(f'Prediction: {answer}')
         print(f'Ground Truth: {gt}')
-        print(get_metrics(answer, gt))
+        #print(get_metrics(answer, gt))
 
 
 

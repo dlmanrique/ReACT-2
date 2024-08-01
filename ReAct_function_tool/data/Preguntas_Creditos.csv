@@ -1,0 +1,23 @@
+Preguntas Multi Hop,Respuesta,Chunks
+¿Tanto el primer como el segundo crédito de vivienda convencional tienen el mismo monto máximo?,No,"1,2"
+¿El crédito de vivienda convencional y el crédito de vivienda especial tienen el mismo plazo máximo de pago?,"Sí, y es de 20 años","1, 29"
+¿El crédito de vehículos y el crédito de vivienda especial exigen la misma cantidad de años de antigüedad?,No,"42,30"
+¿El primer crédito de vehículos y el segundo crédito de vehículos tienen el mismo monto máximo?,Si,"44, 42"
+"Para aplicar a un crédito de libre destino, ¿debo tener contrato a término indefinido y debo presentar algún soporte?",No,"56,57"
+"Entre el primer crédito de vivienda convencional y el primer crédito de vehículos, ¿cuál tiene un plazo mayor?",El crédito de vivienda convencional,"1, 43"
+¿El primer crédito de vivienda convencional y el crédito de libre destino tienen tasas variables?,No,"1,57"
+¿Los dos tipos de créditos de vehículo tienen tasas variables?,Si,"42,44"
+"¿El primer crédito de vivienda convencional y el segundo crédito de vivienda convencional tienen el mismo
+ porcentaje de misma cuota mensual?",Si,"1,2"
+"Si quiero comprar una vivienda fuera de Colombia, ¿puedo utilizar alguno de los créditos de vivienda?",No,"4,30"
+Preguntas Single Hop,,
+¿Se puede usar el dinero de un primer crédito de vivienda convencional para el pago del impuesto de valorización?,Si,3
+¿Es recomendable la compra de leasing con el dinero del crédito de vivienda convencional?,No,17
+¿El primer crédito de vivienda convencional tiene un monto mínimo?,"Sí, y es de $99.433.625",1
+"Para el crédito de vivienda especial, ¿el porcentaje de financiamiento es el mismo para una vivienda de Interés Social y una que no lo es?",No,28
+¿Cuántos años de antigüedad debo tener para que se pueda aprobar un crédito de vivienda especial?,2 años,30
+"Si tengo una vivienda con un valor comercial de 200 SMMLV ubicada en Bogotá, ¿esta se considera una Vivienda de Interés Social (VIS)?",No,40
+"Si obtengo un vehículo mediante el crédito de vehículos, ¿este lo puedo utilizar para servicio de transporte en aplicaciones?",No,43
+¿Es necesario tener un contrato a término indefinido para solicitar un préstamo de libre destino?,Si,56
+¿Un supercrédito es un crédito ya aprobado?,No,37
+¿Puedo comprar un vehículo de 8 años de antigüedad usando el segundo crédito de vehículos?,Si,45
