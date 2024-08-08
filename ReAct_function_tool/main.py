@@ -143,12 +143,10 @@ def few_shots_messages_list_creator():
 
     return messages
 
-def webthink(question, example_messages, idx, to_print=True, record= False):
+def webthink(question, example_messages, idx, available_tools, to_print=True, record= False):
     start_time = time.time()
     messages = copy.deepcopy(example_messages)
-    available_tools = {
-            "rag": rag
-        }
+    
     
     if to_print:
         print(question)
@@ -210,13 +208,18 @@ def webthink(question, example_messages, idx, to_print=True, record= False):
 
 def main():
     example_messages = few_shots_messages_list_creator()
+
+    #Available tools
+    available_tools = {
+            "rag": rag
+        }
     #Create QuestionLoader
     loader = QuestionLoader()
     for i in range(23, 30):
         print('--'*70)
         question = loader.load_question(idx=i)
         gt = loader.get_gt(idx=i)
-        answer = webthink(question, example_messages, idx = i+1, to_print=True, record=True)
+        answer = webthink(question, example_messages, idx = i+1, available_tools= available_tools, to_print=True, record=True)
         print('Evaluation Metrics')
         print(f'Prediction: {answer}')
         print(f'Ground Truth: {gt}')
