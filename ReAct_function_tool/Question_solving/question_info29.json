@@ -1,0 +1,58 @@
+{
+    "react_iterations ": 3,
+    "time consumed": 12.74525761604309,
+    "messages": [
+        {
+            "role": "user",
+            "content": "ï¿½En caso de ser aprobado mi solicitud cï¿½mo me llega la notificaciï¿½n?\n"
+        },
+        {
+            "content": "Tengo que buscar en \"En caso de aprobarse la solicitud\" y encontrar como notificarle.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_DCd7gCro6K3VTFrqQgUIB73m",
+                    "function": {
+                        "arguments": "{\n\"query\": \"En caso de aprobarse la solicitud\" \n}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_DCd7gCro6K3VTFrqQgUIB73m",
+            "role": "tool",
+            "name": "rag",
+            "content": " debes hacer ninguna gestión, estas cartas llegarán actualizadas en su momento, independiente del monto solicitado en SAP.\n\n\n####################################################################################################\nSolicitudes crédito de Vivienda Especial\nCambio tasa de interés \n# Crédito de vivienda especial\n## Cambio de tasa de interés de cliente a empleado\nCuando cumplas con los requisitos exigidos para acceder al beneficio de vivienda especial, podrás solicitar el cambio de tasa, así:\n1. Envía un correo electrónico a su jefe informando sobre el cambio de tasa y solicitando su visto bueno para acceder al beneficio.\n2. Radica tu solicitud de cambio, por medio de un PRG en BIZAGI, debes anexar el correo con el visto bueno de tu jefe, informar número de la obligación, número de cédula y nombre completo del titular y cotitular de la obligación, por último, anexar la “Estipulación Privada” que podrás descargar aquí (firma y cédula)\n\n\n####################################################################################################\n actualmente un crédito de esta línea, una nueva solicitud saldrá aprobada.\n- No existe la figura de retanqueo para los créditos con tasa especial de empleado, por esa razón, es muy importante contar con los recursos en caso de que se tenga saldo por concepto de la misma línea para pagar una vez sea aprobado el crédito nuevo y te soliciten cancelar el anterior.\n\n\n####################################################################################################\nSolicitudes crédito de vehículos\nInformación general del crédito de vehículo\n## Información general crédito de vehículo\nEl empleado debe radicar su solicitud de crédito por SAP, esta solicitud será aprobada por su jefe inmediato. El estudio del crédito esta a cargo de la Célula de Empleados, con un acuerdo de servicio de 6 días, contados a partir del día siguiente en que el jefe inmediato lo aprueba. Si la solicitud del crédito es favorable, al colaborador se le enviará una carta (vigencia de 3 meses) con todas las especificaciones para la constitución de garantía y desembolso.\nPara más agilidad en el proceso te invitamos a gestionar estos documentos los cuales serán solicitados para la constitución de la garantía, según sea el caso:\n- Compra de vehículo nuevo: factura o cotización (no se contemplan costos, gastos o valores adicionales para tramites o para accesorios del mismo). Es muy importante que el valor que solicites coincida con el valor que se especifica en la factura, ya que si la carta fue aprobada por un valor mayor, debe solicitar el cambio de carta a través de un pedido por BIZAGI.\n- Compra de vehículo usado: el empleado debe presentar el peritaje como valor o código Fasecolda, en el cual se validará por el área de garantías el valor a desembolsar (no se contemplan costos, gastos o valores adicionales para tramites o para accesorios del mismo). Recuerda que el vehículo no debe tener prenda, y en caso de tenerla, debes tener presente que el Banco no desembolsará para una destinación diferente que el pago de vehículo cuya prenda este a nombre del Banco.\n- Liberación de prenda: certificado actualizado que relacione el valor de la deuda, la cual debe estar a nombre del empleado. Debes tener presente que cuando el área de Garantías te contacte para la asesoría sobre la “constitución de la garantía” te solicitará copia de la matricula, la cual debe estar solo a nombre del empleado.\n\n\n####################################################################################################\nSolicitudes crédito de Vivienda Especial\nSolicitud de segundo crédito de vivienda especial\n## Para solicitar un nuevo crédito de vivienda especial:\n- Para tener acceso a un nuevo crédito vivienda de empleado, deberán transcurrir 3 (tres) años a partir de la fecha del desembolso del crédito anterior y tener el crédito cancelado o cambiar la tasa a comercial.\nImportante: para hacer la solicitud por SAP no es necesario tener cancelado el crédito anterior, sin embargo, cuando se vaya a realizar el desembolso se debe cancelar el saldo anterior o solicitar el cambio de la obligación a tasa comercial por el flujo de BIZAGI.\n- Si el crédito es para reforma de la vivienda, se otorgará al empleado la diferencia entre el cupo utilizado para el crédito de vivienda actual. En todos los casos el saldo actual del crédito más el nuevo monto solicitado no deben superar el 70% del valor comercial del inmueble. Se debe tener en cuenta que solo es posible tener una obligación con tasa especial de empleado."
+        },
+        {
+            "content": "No encontré información específica sobre cómo se recibe la notificación en caso de aprobación de una solicitud, así que tengo que hacer otra búsqueda más generalizada.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_8b2Kz5cw4vznVAld8HAHrON6",
+                    "function": {
+                        "arguments": "{\"query\":\"¿Cómo se notifica la aprobación de una solicitud?\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_8b2Kz5cw4vznVAld8HAHrON6",
+            "role": "tool",
+            "name": "rag",
+            "content": "Solicitudes crédito de vehículos\nInformación general del crédito de vehículo\n## Información general crédito de vehículo\nEl empleado debe radicar su solicitud de crédito por SAP, esta solicitud será aprobada por su jefe inmediato. El estudio del crédito esta a cargo de la Célula de Empleados, con un acuerdo de servicio de 6 días, contados a partir del día siguiente en que el jefe inmediato lo aprueba. Si la solicitud del crédito es favorable, al colaborador se le enviará una carta (vigencia de 3 meses) con todas las especificaciones para la constitución de garantía y desembolso.\nPara más agilidad en el proceso te invitamos a gestionar estos documentos los cuales serán solicitados para la constitución de la garantía, según sea el caso:\n- Compra de vehículo nuevo: factura o cotización (no se contemplan costos, gastos o valores adicionales para tramites o para accesorios del mismo). Es muy importante que el valor que solicites coincida con el valor que se especifica en la factura, ya que si la carta fue aprobada por un valor mayor, debe solicitar el cambio de carta a través de un pedido por BIZAGI.\n- Compra de vehículo usado: el empleado debe presentar el peritaje como valor o código Fasecolda, en el cual se validará por el área de garantías el valor a desembolsar (no se contemplan costos, gastos o valores adicionales para tramites o para accesorios del mismo). Recuerda que el vehículo no debe tener prenda, y en caso de tenerla, debes tener presente que el Banco no desembolsará para una destinación diferente que el pago de vehículo cuya prenda este a nombre del Banco.\n- Liberación de prenda: certificado actualizado que relacione el valor de la deuda, la cual debe estar a nombre del empleado. Debes tener presente que cuando el área de Garantías te contacte para la asesoría sobre la “constitución de la garantía” te solicitará copia de la matricula, la cual debe estar solo a nombre del empleado.\n\n\n####################################################################################################\n debes hacer ninguna gestión, estas cartas llegarán actualizadas en su momento, independiente del monto solicitado en SAP.\n\n\n####################################################################################################\nSolicitudes crédito de Vivienda Especial\nCambio tasa de interés \n# Crédito de vivienda especial\n## Cambio de tasa de interés de cliente a empleado\nCuando cumplas con los requisitos exigidos para acceder al beneficio de vivienda especial, podrás solicitar el cambio de tasa, así:\n1. Envía un correo electrónico a su jefe informando sobre el cambio de tasa y solicitando su visto bueno para acceder al beneficio.\n2. Radica tu solicitud de cambio, por medio de un PRG en BIZAGI, debes anexar el correo con el visto bueno de tu jefe, informar número de la obligación, número de cédula y nombre completo del titular y cotitular de la obligación, por último, anexar la “Estipulación Privada” que podrás descargar aquí (firma y cédula)\n\n\n####################################################################################################\nSolicitudes crédito de Vivienda Especial\nCondiciones de aprobación del crédito de vivienda especial\n## Condiciones de aprobación crédito de vivienda especial\n- Además de las condiciones legales de aprobación de créditos de vivienda, el empleado debe estar vinculado mediante contrato de trabajo a término indefinido, y tener por lo menos 2 años de antigüedad en el GRUPO BANCOLOMBIA (Empleados de Bancolombia y empleados de sus Filiales en Colombia).\n- Para las Filiales del Exterior se aclara que los empleados solo podrán acceder a los productos hipotecarios que ofrezca la Organización comercialmente para compra de vivienda en Colombia, cumpliendo con todos los requisitos exigidos para empleados no residentes.\n- Para el análisis de la solicitud se podrá tener en cuenta los ingresos familiares del empleado, esto es, los ingresos del empleado mismo, de su cónyuge, hermanos o padres, entre otros.\n- Los empleados podrán solicitar pre aprobados, los cuales se harán por el monto total de la aprobación, y al momento del perfeccionamiento del crédito se establece la tasa preferencial aplicable para el empleado.\n- En el caso del pre aprobado se podrá realizar su conversión dentro de los plazos establecidos por el producto.\n\n\n####################################################################################################\n actualmente un crédito de esta línea, una nueva solicitud saldrá aprobada.\n- No existe la figura de retanqueo para los créditos con tasa especial de empleado, por esa razón, es muy importante contar con los recursos en caso de que se tenga saldo por concepto de la misma línea para pagar una vez sea aprobado el crédito nuevo y te soliciten cancelar el anterior."
+        },
+        {
+            "content": "La informacion proporcionada sugiere que la notificacion de la aprobacion es enviada mediante carta o tambien mediante correo electronico dependiendo del contexto y la institución a cargo de la solicitud. \n\nANSWER[La notificacion de la aprobacion de la solicitud generalmente se recibe mediante una carta o correo electronico.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

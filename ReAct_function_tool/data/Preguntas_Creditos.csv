@@ -1,23 +1,33 @@
 Preguntas Multi Hop,Respuesta,Chunks
-¿Tanto el primer como el segundo crédito de vivienda convencional tienen el mismo monto máximo?,No,"1,2"
-¿El crédito de vivienda convencional y el crédito de vivienda especial tienen el mismo plazo máximo de pago?,"Sí, y es de 20 años","1, 29"
-¿El crédito de vehículos y el crédito de vivienda especial exigen la misma cantidad de años de antigüedad?,No,"42,30"
-¿El primer crédito de vehículos y el segundo crédito de vehículos tienen el mismo monto máximo?,Si,"44, 42"
-"Para aplicar a un crédito de libre destino, ¿debo tener contrato a término indefinido y debo presentar algún soporte?",No,"56,57"
-"Entre el primer crédito de vivienda convencional y el primer crédito de vehículos, ¿cuál tiene un plazo mayor?",El crédito de vivienda convencional,"1, 43"
-¿El primer crédito de vivienda convencional y el crédito de libre destino tienen tasas variables?,No,"1,57"
-¿Los dos tipos de créditos de vehículo tienen tasas variables?,Si,"42,44"
-"¿El primer crédito de vivienda convencional y el segundo crédito de vivienda convencional tienen el mismo
- porcentaje de misma cuota mensual?",Si,"1,2"
-"Si quiero comprar una vivienda fuera de Colombia, ¿puedo utilizar alguno de los créditos de vivienda?",No,"4,30"
+ï¿½Tanto el primer como el segundo crï¿½dito de vivienda convencional tienen el mismo monto mï¿½ximo?,No,"1,2"
+ï¿½El crï¿½dito de vivienda convencional y el crï¿½dito de vivienda especial tienen el mismo plazo mï¿½ximo de pago?,"Sï¿½, y es de 20 aï¿½os","1, 29"
+ï¿½El crï¿½dito de vehï¿½culos y el crï¿½dito de vivienda especial exigen la misma cantidad de aï¿½os de antigï¿½edad?,No,"42,30"
+ï¿½El primer crï¿½dito de vehï¿½culos y el segundo crï¿½dito de vehï¿½culos tienen el mismo monto mï¿½ximo?,Si,"44, 42"
+"Para aplicar a un crï¿½dito de libre destino, ï¿½debo tener contrato a tï¿½rmino indefinido y debo presentar algï¿½n soporte?",No,"56,57"
+"Entre el primer crï¿½dito de vivienda convencional y el primer crï¿½dito de vehï¿½culos, ï¿½cuï¿½l tiene un plazo mayor?",El crï¿½dito de vivienda convencional,"1, 43"
+ï¿½El primer crï¿½dito de vivienda convencional y el crï¿½dito de libre destino tienen tasas variables?,No,"1,57"
+ï¿½Los dos tipos de crï¿½ditos de vehï¿½culo tienen tasas variables?,Si,"42,44"
+"ï¿½El primer crï¿½dito de vivienda convencional y el segundo crï¿½dito de vivienda convencional tienen el mismo
+porcentaje de misma cuota mensual?",Si,"1,2"
+"Si quiero comprar una vivienda fuera de Colombia, ï¿½puedo utilizar alguno de los crï¿½ditos de vivienda?",No,"4,30"
 Preguntas Single Hop,,
-¿Se puede usar el dinero de un primer crédito de vivienda convencional para el pago del impuesto de valorización?,Si,3
-¿Es recomendable la compra de leasing con el dinero del crédito de vivienda convencional?,No,17
-¿El primer crédito de vivienda convencional tiene un monto mínimo?,"Sí, y es de $99.433.625",1
-"Para el crédito de vivienda especial, ¿el porcentaje de financiamiento es el mismo para una vivienda de Interés Social y una que no lo es?",No,28
-¿Cuántos años de antigüedad debo tener para que se pueda aprobar un crédito de vivienda especial?,2 años,30
-"Si tengo una vivienda con un valor comercial de 200 SMMLV ubicada en Bogotá, ¿esta se considera una Vivienda de Interés Social (VIS)?",No,40
-"Si obtengo un vehículo mediante el crédito de vehículos, ¿este lo puedo utilizar para servicio de transporte en aplicaciones?",No,43
-¿Es necesario tener un contrato a término indefinido para solicitar un préstamo de libre destino?,Si,56
-¿Un supercrédito es un crédito ya aprobado?,No,37
-¿Puedo comprar un vehículo de 8 años de antigüedad usando el segundo crédito de vehículos?,Si,45
+ï¿½Se puede usar el dinero de un primer crï¿½dito de vivienda convencional para el pago del impuesto de valorizaciï¿½n?,Si,3
+ï¿½Es recomendable la compra de leasing con el dinero del crï¿½dito de vivienda convencional?,No,17
+ï¿½El primer crï¿½dito de vivienda convencional tiene un monto mï¿½nimo?,"Sï¿½, y es de $99.433.625",1
+"Para el crï¿½dito de vivienda especial, ï¿½el porcentaje de financiamiento es el mismo para una vivienda de Interï¿½s Social y una que no lo es?",No,28
+ï¿½Cuï¿½ntos aï¿½os de antigï¿½edad debo tener para que se pueda aprobar un crï¿½dito de vivienda especial?,2 aï¿½os,30
+"Si tengo una vivienda con un valor comercial de 200 SMMLV ubicada en Bogotï¿½, ï¿½esta se considera una Vivienda de Interï¿½s Social (VIS)?",No,40
+"Si obtengo un vehï¿½culo mediante el crï¿½dito de vehï¿½culos, ï¿½este lo puedo utilizar para servicio de transporte en aplicaciones?",No,43
+ï¿½Es necesario tener un contrato a tï¿½rmino indefinido para solicitar un prï¿½stamo de libre destino?,Si,56
+ï¿½Un supercrï¿½dito es un crï¿½dito ya aprobado?,No,37
+ï¿½Puedo comprar un vehï¿½culo de 8 aï¿½os de antigï¿½edad usando el segundo crï¿½dito de vehï¿½culos?,Si,45
+ï¿½Cuï¿½ndo un colaborador pasa de la convenciï¿½n al estatuto y tiene crï¿½dito de vivienda convencional aprobado se le respeta el desembolso?,"Cuando un empleado convencionado tiene crï¿½dito aprobado de vivienda convencional y pasa al estatuto se le respeta la aprobaciï¿½n del crï¿½dito, podrï¿½a solicitar prï¿½rroga con una justificaciï¿½n vï¿½lida. La vigencia de la carta para este crï¿½dito es de 6 meses, si a la vigencia de la carta no tiene nada negociado pierde el cupo.",
+ï¿½A un colaborador se le mide la capacidad de endeudamiento antes de aprobarle el crï¿½dito convencionado de vivienda?,"El crï¿½dito de vivienda convencional es un beneficio pactado por Convenciï¿½n, por esta razï¿½n, los colaboradores cobijados por la convenciï¿½n y que cumplan con las polï¿½ticas para radicar su crï¿½dito de vivienda convencional serï¿½n beneficiarios de este. Si el colaborador considera que esta muy endeudado para solicitarlo, debe ser ï¿½l quien tome la decisiï¿½n de esperar y organizar sus prioridades para hacer la solicitud. Es decir, no hay ningï¿½n impedimento para hacer la solicitud por SAP en caso de que el empleado no tenga capacidad de pago, sin embargo, el colaborador debe recordar que de su salario serï¿½ descontado el 21%, que se le pignorarï¿½n las cesantï¿½as y que tendrï¿½ descuentos en su prima legal y extralegal del 30%.",
+ï¿½Con el crï¿½dito de vivienda convencional el usuario puede acceder a un beneficio del gobierno adicional?,"No, no lo tiene debido a que el crï¿½dito convencional no tiene ley de vivienda. Cuando se trata de un subsidio de una caja de compensaciï¿½n en dinero, si puede aplicar.",
+ï¿½Cuï¿½l es el tiempo de aprobaciï¿½n para los PRIMEROS crï¿½ditos convencionado de vivienda?,Se tiene un tiempo estipulado de respuesta de 5 dï¿½as despuï¿½s de la aprobaciï¿½n del jefe.,
+ï¿½Cuï¿½les son las fechas para las solicitudes del crï¿½dito de vivienda convencional?,"Los empleados que soliciten por primera vez su crï¿½dito de vivienda convencional, podrï¿½n realizarlo en cualquier dï¿½a del aï¿½o en curso, es decir que no presentan comitï¿½s de aprobaciï¿½n. ",
+"ï¿½Cuï¿½ndo aprueban un crï¿½dito de vivienda convencional y este valor no alcanza para comprar el inmueble que desea el usuario, puedo solicitar un crï¿½dito de vivienda CPT para completar la diferencia?",Sï¿½. El empleado puede solicitar un crï¿½dito de vivienda CPT como cliente externo para poder comprar su vivienda. En la sucursal donde solicite el crï¿½dito como cliente debe informarle al asesor que tiene un crï¿½dito de vivienda convencional aprobado para que lo tengan en cuenta para el estudio del crï¿½dito que realizarï¿½ como cliente y para que le asignen el abogado para los trï¿½mites jurï¿½dicos. En el crï¿½dito convencionado no puede superar el 100% entre el valor de los dos prï¿½stamos convenciï¿½n+hipotecario,
+ï¿½El inmueble adquirido con un crï¿½dito hipotecario de la convenciï¿½n lo debe habitar el empleado?,No es necesario habitar la vivienda.,
+"ï¿½El usuario tiene aprobado un crï¿½dito de educaciï¿½n para empleados convenciï¿½n, puede realizar la solicitud del crï¿½dito de vivienda convencional?","Un colaborador no puede tener activo un crï¿½dito hipotecario con tasa especial de empleado, al mismo tiempo que un crï¿½dito de educaciï¿½n para empleados convenciï¿½n. En caso de tener activo uno de los dos no podrï¿½ solicitar el otro.",
+ï¿½En caso de ser aprobado mi solicitud cï¿½mo me llega la notificaciï¿½n?,A travï¿½s de un correo electrï¿½nico,
+ï¿½Se puede desembolsar por encima del costo del valor del inmueble?,"La respuesta es sï¿½; siempre que el avalï¿½o del inmueble cubra el monto del crï¿½dito. Si compro un inmueble por $70.000.000 y el avalï¿½o es por $80.000.000, se pueden desembolsar los $80.000.000.",

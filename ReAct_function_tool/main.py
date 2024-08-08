@@ -25,7 +25,6 @@ def rag(query, retriever=retriever):
     return docs.get_texts_as_str(token=f"\n\n\n{100*'#'}\n")
 
 # Function to create artificial ids
-
 def generate_id(prefix="call_", lenght=22):
     base_id = string.ascii_letters + string.digits
     id_random = ''.join(random.choices(base_id, k=lenght))
@@ -46,15 +45,15 @@ def llm(messages):
             "type": "function",
             "function": {
                 "name": "rag",
-                "description": """Use this function to retrieve information usefull for you to answer the user question or query.""",
+                "description": """Utilice esta función para recuperar información útil para responder a la pregunta o consulta del usuario.""",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "query": {
                             "type": "string",
-                            "description": """Description of the information required to answer a question in plain text based on the user's question or query. 
-                                            If the user's question or query is too complex this input should be a decomposition of the original 
-                                            user question focused on a specific single piece of information.""",
+                            "description": """Descripción de la información necesaria para responder a una pregunta en texto plano basada en la pregunta o consulta del usuario. 
+                                            Si la pregunta o consulta del usuario es demasiado compleja, esta entrada debe ser una descomposición de la pregunta original del usuario 
+                                            centrada en un único dato específico de la pregunta original del usuario centrada en una única información específica.""",
                         },
                     },
                     "required": ["query"],
@@ -144,7 +143,8 @@ def few_shots_messages_list_creator():
 
     return messages
 
-def webthink(question, example_messages, idx, to_print=True):
+def webthink(question, example_messages, idx, to_print=True, record= False):
+    start_time = time.time()
     messages = copy.deepcopy(example_messages)
     available_tools = {
             "rag": rag
@@ -155,15 +155,16 @@ def webthink(question, example_messages, idx, to_print=True):
     prompt = question + "\n"
     original_lenght = len(messages)
     messages.append({"role": "user", "content": prompt})
-
-    #FIXME: remenber to change the maximun times parameter to 8
+    react_iterations = 0
     for i in range(1, 8):
+        react_iterations += 1
         response = llm(messages)
         response_message = response.choices[0].message
         messages.append(response_message.dict())
         
-        if 'ANSWER' in response_message.content:
-            break
+        #Case when it just call function and not make the 'thought'
+        if response_message.content is not None and 'ANSWER' in response_message.content:
+            break       
 
         tool_calls = response_message.tool_calls
         if tool_calls:
@@ -195,8 +196,13 @@ def webthink(question, example_messages, idx, to_print=True):
             print(f'Observacion {i}: {messages[-1]['content']}')
 
     question_messages_info = messages[original_lenght:]
-    with open(f'Question_solving/question_info{idx}.json', 'w', encoding='utf-8') as json_file:
-        json.dump(question_messages_info, json_file, ensure_ascii=False, indent=4)
+    elapsed_time = time.time() - start_time
+    if record == True:
+        with open(f'Question_solving/question_info{idx}.json', 'w', encoding='utf-8') as json_file:
+            json_info_dict = {'react_iterations ': react_iterations, 
+                              'time consumed': elapsed_time,
+                              'messages': question_messages_info}
+            json.dump(json_info_dict, json_file, ensure_ascii=False, indent=4)
     #Return only answer
     return messages[-1]['content']
 
@@ -206,11 +212,11 @@ def main():
     example_messages = few_shots_messages_list_creator()
     #Create QuestionLoader
     loader = QuestionLoader()
-    for i in range(18, 20):
+    for i in range(23, 30):
         print('--'*70)
         question = loader.load_question(idx=i)
         gt = loader.get_gt(idx=i)
-        answer = webthink(question, example_messages, idx = i+1, to_print=True)
+        answer = webthink(question, example_messages, idx = i+1, to_print=True, record=True)
         print('Evaluation Metrics')
         print(f'Prediction: {answer}')
         print(f'Ground Truth: {gt}')
