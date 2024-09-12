@@ -9,12 +9,12 @@ DATA_DIR = "data"
 class QuestionLoader():
   def __init__(self):
     super().__init__()
-    data_file = f"{DATA_DIR}/{'Preguntas_Creditos.csv'}"
-    self.data = pd.read_csv(data_file, encoding='latin1')
+    data_file = f"{DATA_DIR}/{'baseline_gh.csv'}"
+    self.data = pd.read_csv(data_file, encoding='utf-8')
     #Remove Single Hop line
-    self.data = self.data.drop(10)
-    self.data.columns = ["Pregunta", "Respuesta", "Chunks"]
-    self.max_questions = 20
+    #self.data = self.data.drop(10)
+    self.data.columns = ["Creador", "Pregunta", "Respuesta"]
+
 
   def load_question(self, idx):
     question = self.data.iloc[idx]["Pregunta"]

@@ -1,0 +1,51 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 5.032262325286865,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Los dias 24 y 31 de diciembre hacen parte del computo de las vacaciones?  Y Los sabados se cuentan como dias laborales para el calculo de las vacaciones legales?\n"
+        },
+        {
+            "content": "Primero debo averiguar si los días 24 y 31 de diciembre se consideran para el cómputo de vacaciones, y luego debo investigar si los sábados se cuentan como días laborales para el cálculo de vacaciones legales.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_tpFQFqiazPlhcYZeAgV6e9kN",
+                    "function": {
+                        "arguments": "{\"query\": \"Los días 24 y 31 de diciembre para el cómputo de las vacaciones\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                },
+                {
+                    "id": "call_u65tg3u9plZdgBz6wo0vguAK",
+                    "function": {
+                        "arguments": "{\"query\": \"Los sábados se cuentan como días laborales para el cálculo de las vacaciones legales\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_tpFQFqiazPlhcYZeAgV6e9kN",
+            "role": "tool",
+            "name": "rag",
+            "content": "Vacaciones\n¿Los días 24 y 31 de diciembre hacen parte del cómputo de las vacaciones? \nSí, siempre y cuando sean días hábiles. En caso contrario, no harían parte del cómputo de vacaciones."
+        },
+        {
+            "tool_call_id": "call_u65tg3u9plZdgBz6wo0vguAK",
+            "role": "tool",
+            "name": "rag",
+            "content": "Vacaciones\n¿Los sábados se cuentan cómo días laborales para el cálculo de las vacaciones legales? \nPara el Banco el sábado no es un día hábil; las vacaciones legales se cuentan de lunes a viernes. "
+        },
+        {
+            "content": "Los días 24 y 31 de diciembre se cuentan para el cómputo de vacaciones solamente si son días hábiles. Con respecto a los sábados, estos no se cuentan como días laborales para el cálculo de las vacaciones legales, ya que las vacaciones se cuentan de lunes a viernes. ANSWER[Los días 24 y 31 de diciembre se cuentan para el cómputo de vacaciones solamente si son días hábiles. Los sábados no se cuentan como días laborales para el cálculo de las vacaciones legales, pues se cuentan de lunes a viernes.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

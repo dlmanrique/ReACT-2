@@ -1,0 +1,58 @@
+{
+    "react_iterations ": 3,
+    "time consumed": 7.630391836166382,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Si soy un empleado cobijado por la convencion colectiva puedo solicitar el credito de mejoras de la vivienda y auxilio educativo?\n"
+        },
+        {
+            "content": "Para resolver esta pregunta, primero debo entender las implicaciones de la convencion colectiva y luego determinar si los beneficios especificos como el credito de mejoras de la vivienda y el auxilio educativo estan incluidos. \n\nVoy a buscar información relacionada con cuales son los beneficios que usualmente se incluyen en una convencion colectiva en terminos de credito de mejoras de la vivienda y auxilio educativo.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_AhMSDuebeaSYF1hqUuTh0P9f",
+                    "function": {
+                        "arguments": "{\n\"query\": \"beneficios convencion colectiva credito mejoras vivienda auxilio educativo\"\n}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_AhMSDuebeaSYF1hqUuTh0P9f",
+            "role": "tool",
+            "name": "rag",
+            "content": "Auxilios y subsidios\nSUBSIDIO GASTOS NOTARIALES Y REGISTRO:\nSe asigna para empleados cobijados tanto por el Estatuto de Beneficios. El subsidio de gastos notariales aplica exclusivamente para los créditos que sean desembolsados con tasa especial de empleado, lo anterior, se validará con el documento: “Visto Bueno” que fue enviado al empleado.\nEste subsidio aplica tanto para empleados cobijados por el “Estatuto de Beneficios” como por la “Convención Colectiva”. Esto quiere decir que un empleado cobijado por la Convención Colectiva también puede acceder al crédito de vivienda de “tasa especial” con su respectivo subsidio de gastos notariales, bajo las condiciones establecidas.\nAplica para el Leasing Habitacional, esto, siempre y cuando el empleado cumpla con el tope de salario establecido, además, el leasing sea con tasa especial, es decir, el beneficio solo aplicaría para los empleados cubiertos por el estatuto.\nSe recomienda que la documentación tenga una vigencia no mayor a 9 meses. Ten presente que, si el tiempo de vigencia es mayor al recomendado, el valor a pagar del subsidio será el vigente con base a la fecha del documento soporte."
+        },
+        {
+            "content": "Los empleados cobijados por la Convencion Colectiva pueden acceder a un credito de mejoras de vivienda bajo ciertas condiciones, como tener una tasa especial y cumplir con los topes de salario establecidos. \n\nAhora tengo que buscar si tambien tienen derecho al auxilio educativo.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_abwBJJzvfzStf3B2SU2fT7TH",
+                    "function": {
+                        "arguments": "{\"query\":\"auxilio educativo convencion colectiva\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_abwBJJzvfzStf3B2SU2fT7TH",
+            "role": "tool",
+            "name": "rag",
+            "content": "Auxilios y subsidios\nAuxilio Educativo\nPara empleados cobijados por la convención colectiva.\nImportante: Las solicitudes correspondientes al periodo académico vigente, deben radicarse una sola vez al año, entre el primer día hábil de enero y el 20 de diciembre. De no ser solicitado dentro de estas fechas se pierde el derecho al auxilio educativo por el respectivo año.\n•  El certificado de estudio y/o comprobante de pago deben ser anexados en la solicitud y presentados al jefe inmediato quien mediante la aprobación de la solicitud a través de Conectados certifica que el empleado cumple con las condiciones para acceder al beneficio.\n•    El Banco permanentemente realiza auditorias aleatorias; y en caso de que seas requerido, debes compartir el certificado de estudio.\n•    Los auxilios de educación especial requieren aprobación de la Sección Novedades de Nómina.\n•    Los empleados con ausencias prolongada, el jefe podrá realizar la solicitud por ellos a través de Conectados.\n•\tEducación especial aplica para hijos de cualquier edad que requiera educación especial.\n•\tLos empleados con contrato a Término Fijo sólo podrán solicitar este beneficio para estudios universitarios de pregrado, técnicos o tecnológicos del trabajador. (No para sus hijos cónyuge o compañera (o) permanente).\n•\tEl monto del auxilio educativo es independiente del costo de matrícula.\n•\tEl auxilio de guardería se puede solicitar hasta los 5 años de edad, así el beneficiario NO este estudiando en una institución educativa.\n\nPara conocer el valor de auxilio que entrega la organización según el Beneficiario, Tipo Estudio, Término de Contrato, consultalo en el ¿Y cómo lo hago? / Auxilios y subsidios (https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/Auxilios-y-Subsidios.aspx)\n\n\n####################################################################################################\nAuxilios y subsidios\nGeneraldiades\nA continuación, encontrarás toda la información actualizada que los colaboradores necesitan conocer acerca de los AUXILIOS y SUBSIDIOS otorgados por la Organización y que deben ser solicitados por los empleados a través de Conectados, acorde con lo establecido en la Convención Colectiva de Trabajo (AUXILIOS) y en el Estatuto de Beneficios (SUBSIDIOS); Con los cuales contribuimos al bienestar de los empleados y sus familias. \n\n¿A quiénes aplican a los auxilios y a quienes a los subsidios?\nAuxilios: Empleados que se encuentre amparados por la Convención Colectiva. Es decir, quienes pertenezcan al escalafón de cargos operativos y cumplan con el tope salarial vigente ($5.444.410).\n\nSubsidios: Todos los empleados NO cobijados por la convención colectiva de trabajo. Es decir, quienes tengan un cargo del mapa profesional y que cumplan el tope salarial vigente ($4.640.000).\nNotas: \n•\tLos Aprendices\" y \"Estudiantes en Convenio” No tienen acceso a estos beneficios.\n•\tLa política de los auxilios aplica tanto para los empleados con contrato a término fijo, como a término indefinido.\n\nFechas de pago:\n•\tLas solicitudes aprobadas hasta el día 10, se pagan en la 1ª. Quincena del mes.\n•\tLas solicitudes aprobadas hasta el día 21, se pagan en la 2ª. Quincena del mes.\n•\tLos auxilios de \"Educación Especial\" se pagan en su totalidad en la quincena en la cual son aprobados (según las mismas fechas anteriores).\n\n\n####################################################################################################\nAuxilios y subsidios\nAuxilio y subsidio educativo - documentos requeridos\n•\tCertificado de estudio emitido por la institución educativa o liquidación de Matrícula con sello de cancelado. Los cuales deben contener:\n•\tDocumento de identidad de la persona.\n•\tNombre completo.\n•\tNivel Educativo.\n•\tNombre de Programa.\n•\tGrado o semestre.\n•\tPara solicitudes de Auxilio/Subsidio de EDUCACIÓN ESPECIAL (Según lo establece la Convención Colectiva página 62) debe presentar el Certificado de Estudio emitido por la Institución Educativa donde recibe la educación especial cumpliendo con las siguientes características:\n•\tLa entidad debe estar avalada por el Ministerio de Educación Colombiano o Regional\n•\tEspecificar que es una entidad certificada para educación especial y el tipo de estudio (de carácter especial) que recibe el hijo del empleado.\n•\tEn la certificación presentada debe constar que:\n•\tEl estudiante es de inclusión.\n•\tRecibe atención de acuerdo con su diagnóstico.\n•\tEl diagnostico que presenta.\n•\tEl año actual.\n•\t¡Ten presente! El Banco permanentemente realiza auditorias aleatorias, en caso de que seas requerido debes digitalizar los documentos que presentaste al momento de la solicitud.\n\n\n####################################################################################################\nAuxilios y subsidios\npaso a paso para radicar solicitud\nEste procedimiento aplica para empleados amparados por la Convención Colectiva, como los empleados amparados por el estatuto de beneficios.\nPaso a paso para realizar la solicitud:\n1.\tRadicación de la solicitud del Auxilio, por parte del empleado a través de Conectados (clic aquí para el instructivo).\n2.\tPresentación al jefe inmediato del soporte de estudio: \"Liquidación de Matrícula\" (con sello de cancelado) o \"Certificado de Estudio\" (firmado y sellado) emitidos por la institución educativa aprobada por el Estado Colombiano (cualquiera de los dos documentos es válido).\n3.\tValidación del jefe de las condiciones para la aprobación de los Auxilios Educativos.\n4.\tAprobación o Devolución \"definitivo\" de la solicitud por parte del jefe inmediato a través de Conectados ver instructivo de aprobación solicitud por parte del jefe (el empleado recibirá una notificación automática por correo electrónico de esta aprobación o rechazo)\n\nImportante: \n•\tEl Sistema se encuentra diseñado para permitir las solicitudes de los empleados de acuerdo con el tipo de empleado, término del contrato, beneficiarios y tope salarial. Por lo tanto, si al momento de radicar la solicitud se le presenta inconsistencia en el campo nivel es porque el empelado no cumple con alguno o varios de los requisitos.\n•\tSi al radicar la solicitud no le permite porque tiene otra solicitud pendiente de aprobación, se debe comunicar con la mesa de servicio MATEO, radicar un incidente para que se valide y se gestione la novedad; y el sistema le permita radicar la nueva solicitud.\n•\tEl Banco realizará controles periódicos sobre la debida solicitud de los Auxilios y Subsidios Educativos, por lo que recomendamos a los colaboradores conservar los soportes de estudio ya que en caso de que ser solicitados con posterioridad al pago, deberán ser presentados.\n•\tEntre la última solicitud y la nueva solicitud para el mismo beneficiario, debe existir una diferencia en tiempo de 1 año (12 meses); en caso contrario el sistema generará un mensaje de error al momento de radicar la solicitud."
+        },
+        {
+            "content": "Los empleados cobijados por la Convención Colectiva pueden solicitar tanto el crédito de mejoras de vivienda como el auxilio educativo, bajo ciertas condiciones y procedimientos establecidos.\n\nANSWER[Los empleados cobijados por la Convención Colectiva pueden solicitar tanto el crédito de mejoras de vivienda como el auxilio educativo, bajo ciertas condiciones y procedimientos establecidos.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

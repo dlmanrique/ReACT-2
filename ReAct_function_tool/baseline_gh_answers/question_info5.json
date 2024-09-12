@@ -1,0 +1,37 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 4.803802490234375,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Cual es el monto que presta Bancolombia a empleados de la convencion colectiva para su primer y segundo credito de vivienda respectivamente?\n"
+        },
+        {
+            "content": "Tengo que buscar el monto que presta Bancolombia a empleados de la convencion colectiva para su primer y segundo credito de vivienda.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_5yP8cYfF5aIgCoGOehjN6P8Y",
+                    "function": {
+                        "arguments": "{\n\"query\": \"monto que presta Bancolombia a empleados de la convención colectiva para su primer y segundo crédito de vivienda\"\n}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_5yP8cYfF5aIgCoGOehjN6P8Y",
+            "role": "tool",
+            "name": "rag",
+            "content": "Créditos\n¿Cuál es el monto que presta Bancolombia a empleados de la convención colectiva para su primer crédito de vivienda?\n 70 veces el salario del empleado con un tope mínimo de $99.433.625.\n\n\n####################################################################################################\nCréditos\n¿Cuál es el monto que presta Bancolombia a empleados de la convención colectiva para su segundo crédito de vivienda?\nEl monto máximo de préstamo para el segundo crédito de vivienda es el 70% de 70 veces el salario del empleado.\n\n\n####################################################################################################\nCrédito de vivienda convencional para empleados\nPrimer crédito de vivienda para empleados\n¿Quiénes pueden solicitar este crédito? Los primeros créditos se otorgarán de manera automática a los empleados de Bancolombia y Líneas de Negocio que estén cobijados por la convención colectiva y que cumplan con las siguientes condiciones establecidas en el reglamento para los créditos convencionales de vivienda:\n1.\tContrato a término indefinido.\n2.\t4 años de antigüedad en la organización.\n¿Cuánto me prestan?\n•\tMonto primeros créditos: 70 veces tu salario -tope mínimo de $99.433.625\n¿Cómo lo pago?\n•\tAmortización: Cuota mensual del 21% del salario básico mensual del empleado. Abono trimestral de las cesantías acumuladas. 30% de las primas de servicio (legal y extralegal).\n•\tPlazo: hasta 20 años.\n•\tTasa: tasa fija del 4.8% nominal anual mes vencido.\nPara tener en cuenta:\n\nPrimer crédito: Si tienes un crédito de vivienda convencional aprobado, sin desembolsar y aún no has escriturado, puedes solicitar el nuevo valor radicando la solicitud por SAP, para generar una carta actualizad. (Tener en cuenta que son 70 salarios del empleado, siempre y cuando el valor del avalúo sea superior a este cálculo).\n\nNota: puedes consultar con el abogado que está a cargo de tu crédito si en el estado actual de tu solicitud puedes aplicar al nuevo monto.\n\n\n####################################################################################################\nCrédito de vivienda convencionalpara empleados\nSegundo crédito de vivienda para empleados\n¿Quiénes pueden solicitar este crédito?\nLos segundos créditos se otorgarán a los empleados de Bancolombia y Líneas de Negocio que estén cobijados por la convención colectiva, de acuerdo a los fondos establecidos para la distribución de los recursos, teniendo en cuenta estos pasarán por revisión de un comité el cual validará que cumplan con las siguientes condiciones establecidas en el reglamento para los créditos convencionales de vivienda:\n1.\tQue hayan transcurrido 5 años después del desembolso del crédito anterior de vivienda convencional.\n2.\tQue se inscriban durante el tiempo que se encuentra habilitada la herramienta para solicitud de segundos créditos, a la cual se le da apertura cada año a finales del mes de septiembre y durante todo un mes.\nImportante:\n•\tLas postulaciones para los Segundos Créditos de Vivienda Convencional se habilitarán a partir del 20 de septiembre y hasta el 20 de octubre de 2022.\n•\tPara radicar una nueva solicitud por SAP, debes tener cancelado tu crédito anterior.\n¿Cuánto me prestan?\n•\tMonto segundos créditos: hasta el 70% del resultado que da multiplicar el salario del empleado 70 veces.\n¿Cómo lo pago?\n•\tAmortización: Cuota mensual del 21% del salario básico mensual del empleado. Abono trimestral de las cesantías acumuladas. 30% de las primas de servicio (legal y extralegal).\n•\tPlazo: hasta 20 años.\n•\tTasa: tasa fija del 4.8% nominal anual mes vencido."
+        },
+        {
+            "content": "Para el primer crédito de vivienda, el monto prestado por Bancolombia es 70 veces el salario del empleado, con un tope mínimo de $99.433.625. Para el segundo crédito de vivienda, el monto máximo es el 70% de 70 veces el salario del empleado. ANSWER[Para el primer crédito de vivienda, el monto prestado por Bancolombia es 70 veces el salario del empleado, con un tope mínimo de $99.433.625. Para el segundo crédito de vivienda, el monto máximo es el 70% de 70 veces el salario del empleado.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

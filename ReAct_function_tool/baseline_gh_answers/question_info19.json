@@ -1,0 +1,58 @@
+{
+    "react_iterations ": 3,
+    "time consumed": 6.324883460998535,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Que es un absentismo y  que tipos de absentismos hay?\n"
+        },
+        {
+            "content": "Necesito encontrar informacion sobre lo que es un absentismo y los tipos de absentismos que existen.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_Ogk0xKRDacDFuJzOtttggMZp",
+                    "function": {
+                        "arguments": "{\n\"query\": \"qué es el absentismo y qué tipos de absentismos hay\"\n}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_Ogk0xKRDacDFuJzOtttggMZp",
+            "role": "tool",
+            "name": "rag",
+            "content": "Vacaciones\n¿A qué hace referencia el término absentismo?\nEl absentismo laboral es el conjunto de ausencias justificadas por parte de los trabajadores de un determinado centro de trabajo."
+        },
+        {
+            "content": "“Tengo que buscar ‘tipos de absentismos’.”",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_Hg8sMOQvZoSMwJCqFs4Hwh41",
+                    "function": {
+                        "arguments": "{\"query\":\"tipos de absentismos\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_Hg8sMOQvZoSMwJCqFs4Hwh41",
+            "role": "tool",
+            "name": "rag",
+            "content": "Vacaciones\n¿Qué tipo de absentismos y presencias se graban en el portal SAP de Empleados? \n• Vacaciones\n • Horas extras\n • Licencia por luto\n • Licencia por matrimonio\n • Permisos por calamidad doméstica\n\n\n####################################################################################################\nVacaciones\n¿Qué tipo de absentismos y presencias se graban en el portal SAP de jefes con el código de gestor de tiempos?\nVacaciones, Horas extras, Licencia por luto, Licencia por matrimonio, Horarios de trabajo, Permisos por calamidad doméstica, Suplencias."
+        },
+        {
+            "content": "El absentismo laboral es el conjunto de ausencias justificadas por parte de los trabajadores de un determinado centro de trabajo. Los tipos de absentismos que se registran son vacaciones, horas extras, licencia por luto, licencia por matrimonio, permisos por calamidad doméstica, horarios de trabajo y suplencias. ANSWER[El absentismo laboral es el conjunto de ausencias justificadas por parte de los trabajadores de un determinado centro de trabajo. Los tipos de absentismos que se registran son: vacaciones, horas extras, licencia por luto, licencia por matrimonio, permisos por calamidad doméstica, horarios de trabajo y suplencias.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

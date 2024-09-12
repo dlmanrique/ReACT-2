@@ -1,0 +1,37 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 3.910839796066284,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Cual es la diferencia de saldos a retirar si hago un retiro parcial o uno definitivo del plan Mutuocolombia?\n"
+        },
+        {
+            "content": "Para resolver esto, necesito obtener información específica sobre las condiciones y diferencias establecidas en el plan Mutuocolombia para retiros parciales y definitivos. \n\nVoy a consultar esto primero.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_F1NtSD297za0aNZdJxwGkjWv",
+                    "function": {
+                        "arguments": "{\n\"query\": \"diferencia de saldos a retirar en retiro parcial o definitivo del plan Mutuocolombia\"\n}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_F1NtSD297za0aNZdJxwGkjWv",
+            "role": "tool",
+            "name": "rag",
+            "content": "MUTUOCOLOMBIA\nRetiro parcial:\n•\tSólo podrás solicitar un (1) retiro parcial en el año calendario a través de la página web o en una de las oficinas de servicio (si el retiro es para vivienda, conoce toda la información aquí)\n•\tPodrás hacerlo únicamente en los meses de marzo, junio, septiembre o diciembre. El saldo disponible para retirar será de acuerdo al mes, así:\n•\tMarzo y septiembre: podrás retirar tu aporte ordinario como partícipe, el aporte ordinario de la patrocinadora consolidado a tu nombre, tu aporte extraordinario como partícipe y el aporte extraordinario de la patrocinadora consolidado a tu nombre. \n•\tJunio y diciembre: podrás retirar tu aporte ordinario como partícipe y el aporte ordinario de la patrocinadora consolidado a tu nombre.\n\nNo podrás retirar los aportes que fueron realizados durante los tres (3) primeros años.\nImportante: Si tu retiro parcial es para compra de vivienda, la solicitud del retiro debes hacerla a través de la oficina de servicio y presentar documentos de retiros de vivienda.\n\n\n####################################################################################################\nMUTUOCOLOMBIA\nRetiro definitivo:\nRecuerda que, si decides retirarte definitivamente del plan, no podrás volver a ahorrar después de haber cumplido 2 años luego del retiro definitivo.\n1.\tDiligencia el formulario de retiros definitivos aquí.\n2.\tLuego de diligenciar el formulario, te llegará un correo electrónico a tu correo corporativo con toda la información para finalizar el proceso de retiro, este correo te llegará dentro de los primeros 5 días hábiles después de diligenciar el formulario.\n\nImportante: si te retiras del plan antes de que tus aportes hayan sido consolidados (3 años ininterrumpidos en el plan), el dinero aportado por parte del Banco no podrás retirarlo y este pasará a entregarse a los empleados activos que lleven 5 o años o más ininterrumpidos en el fondo.\nLas solicitudes para retiros totales \"libre destinación\" que sean recibidas hasta el día 15, del mes, serán abonadas a los 5 días hábiles del mes siguiente, si son recibidas posterior al día 15 del mes, serán abonadas a los 5 días hábiles del mes subsiguiente.\nLos empleados que realicen solicitudes de retiro total por concepto de: \"Compra de vivienda” el banco les enviará la autorización de retiro y luego se debe validar en Protección que otros requisitos son requeridos. \n\n\n####################################################################################################\nMUTUOCOLOMBIA\nRetiros:\n•\tCuando haces un retiro, Protección te retiene el 7% sobre los intereses que la cuenta en total ha generado.\n•\tSi el retiro es por compra de vivienda, pensión, o porque llevas más de 10 años ahorrando, no se realiza esta retención.\n•\tLos retiros pueden ser transferidos a tu cuenta. Asegúrate que la cuenta inscrita este correcta desde el portal www.proteccion.com.co > Zona transaccional > Módulo de retiros\n•\tPara gestionar algún retiro (excepto retiros parciales para compra de vivienda) ingresa al botón que se expone a continuación, ingresa usuario y contraseña, selecciona opción Transacciones/ Mi ahorro e inversión / Retiros / Clic en el plan Mutucolombia. \n\n\n####################################################################################################\nMUTUOCOLOMBIA\n¿Qué pasará con mi plan si mi contrato laboral finaliza o me retiro de la organización?\nTendrás derecho a todos los aportes ordinarios y extraordinarios que hayas realizado, así como los aportes que la patrocinadora haya realizado y que se encuentren consolidados a tu nombre. Nota: Para ambos casos, el Banco recibe las solicitudes de retiro hasta el día 15 de cada mes (o día hábil anterior si el 15 no es día hábil) y las reporta el día 20 del mismo mes. Estos retiros se pagan el 5to día hábil del mes siguiente.\n\n\n####################################################################################################\nMUTUOCOLOMBIA\n¿Cómo puedo volver a ahorrar después de retirarme definitivamente del plan?\nSi eres partícipe y te retiras voluntariamente del Plan Institucional Mutuocolombia, solo podrás reintegrarte al mismo cuando hayan pasado dos (2) años desde la fecha en que fue aprobado tu retiro. Pasados los dos (2) años desde el retiro, si desear reactivar tu ahorro debes enviar un correo con la solicitud a bienesta@bancolombia.com.co con tu nombre completo, número de documento e indicando en el asunto que deseas activar nuevamente tu ahorro. A tu correo te llegará un instructivo para que grabes en la herramienta SAP el valor que deseas ahorrar."
+        },
+        {
+            "content": "La diferencia principal entre los retiros parciales y definitivos del plan Mutuocolombia es el acceso a los aportes de la patrocinadora y a los aportes realizados en los últimos tres años. En un retiro parcial, los aportes recientes y ciertos aportes de la patrocinadora pueden estar restringidos. En un retiro definitivo, si no se ha alcanzado la consolidación (tres años), los aportes de la patrocinadora no se retiran. También hay diferencias en los tiempos y procedimientos para realizar los retiros en ambos casos. \n\nANSWER[En un retiro parcial, los aportes recientes (hechos en los últimos tres años) y ciertos aportes de la patrocinadora pueden no estar disponibles. En un retiro definitivo, si los aportes de la patrocinadora no se han consolidado (tres años de permanencia ininterrumpida en el plan), no se pueden retirar. Además, hay diferencias en los procedimientos y tiempos de procesamiento para ambos tipos de retiros.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

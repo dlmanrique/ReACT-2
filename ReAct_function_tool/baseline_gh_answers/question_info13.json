@@ -1,0 +1,37 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 5.926853895187378,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Cual es el procedimiento de afiliacion y modificacion de aportes en mutuocolombia?\n"
+        },
+        {
+            "content": "Tengo que buscar el procedimiento de afiliacion y modificacion de aportes en Mutuocolombia para responder a la pregunta.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_5WS5g0EYVQN8Qt0RvlUcBTjc",
+                    "function": {
+                        "arguments": "{\n\"query\": \"procedimiento de afiliacion y modificacion de aportes en Mutuocolombia\"\n}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_5WS5g0EYVQN8Qt0RvlUcBTjc",
+            "role": "tool",
+            "name": "rag",
+            "content": "MUTUOCOLOMBIA\nModificación aportes:\n1.\tSimula tu capacidad máxima de ahorro ingresando en la página  https://www.proteccion.com/contenidos/empresa/ahorro/mutuocolombia-plan-institucional-bancolombia y señalando la opción \"Simula tu ahorro\". \n2.\tModifica el aporte ordinario a través del portal SAP. La modificación se hará efectiva, una vez el Área de Nómina procese la solicitud de acuerdo con las fechas establecidas para las novedades de nómina. EL instructivo lo puedes encontrar en ¿y cómo lo hago?: https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/Mutuocolombia.aspx\n\nNota. Si no tienes acceso a SAP, escríbenos al buzón bienesta@bancolombia.com.co con el asunto: Mutuocolombia.\nSi requieres consultar tu saldo ingresa al sitio transaccional de protección /personas, diligencia tu usuario y contraseña, selecciona opción Transacciones de pensión voluntaria / Plan Mutucolombia y opción “SALDO”.\n\n\n####################################################################################################\nMUTUOCOLOMBIA\nAfiliación:\n1.\tDiligenciar el documento de afiliación \"firma cliente\"\n2.\tEnvía una foto o copia legible de la cédula y el “firma cliente” diligenciados con anterioridad al correo: bienesta@bancolombia.com.co\n3.\tEspera la llamada de un asesor del Plan Institucional para culminar el proceso de afiliación.\n\nNota. Para diligenciar el documento debes buscar la opción de “descargar” en la parte superior de la pantalla para poder editarlo más adelante. El documento cambiará el formato automáticamente para ser editado, una vez abierto el documento, haz clic en la opción \"Rellenar y firmar\", la cual se encuentra en el costado derecho de la pantalla y ubica el cursor en cada campo a diligenciar, haz clic y escribe la información solicitada. Repite este proceso en cada espacio y no olvides marcar los campos de autorización de recolección y uso de datos personales para enviarte información importante de tu ahorro. \n\nCuando finalices este proceso, guarda el documento en tu equipo.\n\n\n####################################################################################################\nMUTUOCOLOMBIA\nDEFINICION\nMutuocolombia es un plan de ahorro que te ayuda a cumplir tus sueños, como tener una casa propia, estudiar o viajar por el mundo. Por eso, queremos que conozcas cómo funciona:\n•\tInteractúan 2 agentes, el primero es denominado el participe o empleado, el cual realiza aportes periódicos descontados de su nómina; el segundo agente es la patrocinadora o empresa, quien realiza aportes periódicos equivalentes a un 50% del valor del aporte del participe, quién será beneficiario de este dinero según unas condiciones establecidas.\n•\tPara ser un participe del plan, debes ser un empleado del Grupo Bancolombia y tener un contrato a término indefinido. Este beneficio no aplica para empleados con contrato a término fijo, aprendices o practicantes.\n•\tTus primeros 3 años de ahorro están bloqueados para la permanencia en el plan, lo que puedes retirar es lo que ahorraste del mes 37 en adelante.\n•\tEs administrado por Protección. Te invitamos a que conozcas los portafolios y la forma en la que se administran los recursos del plan, descargando la ficha técnica en la ruta: Protección: Pensiones, Cesantías, Ahorro e Inversión (proteccion.com)"
+        },
+        {
+            "content": "El procedimiento de afiliación y modificación de aportes en Mutuocolombia es el siguiente:\n\n**Afiliación:**\n1. Diligenciar el documento de afiliación \"firma cliente\".\n2. Enviar una foto o copia legible de la cédula y el documento \"firma cliente\" diligenciado al correo: bienesta@bancolombia.com.co.\n3. Esperar la llamada de un asesor del Plan Institucional para culminar el proceso de afiliación.\n\n**Modificación de Aportes:**\n1. Simula tu capacidad máxima de ahorro ingresando en la página [Mutuocolombia Ahorro Simulación](https://www.proteccion.com/contenidos/empresa/ahorro/mutuocolombia-plan-institucional-bancolombia) y seleccionando la opción \"Simula tu ahorro\".\n2. Modifica el aporte ordinario a través del portal SAP. La modificación se hará efectiva una vez el Área de Nómina procese la solicitud de acuerdo con las fechas establecidas para las novedades de nómina (instructivo en: [Bancolombia Gestión Humana](https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/Mutuocolombia.aspx)).\n\nNota: Si no tienes acceso a SAP, escribe al buzón bienesta@bancolombia.com.co con el asunto: Mutuocolombia.\nPara consultar tu saldo, ingresa al sitio transaccional de protección /personas, diligencia tu usuario y contraseña, selecciona la opción \"Transacciones de pensión voluntaria / Plan Mutucolombia\" y opción “SALDO”.\n\nANSWER[El procedimiento de afiliación y modificación de aportes en Mutuocolombia incluye pasos específicos para ambas acciones, como el envío de documentos por email y ajustes a través del portal SAP.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

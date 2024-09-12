@@ -19,9 +19,9 @@ client = AzureOpenAI(
 )
 
 #Demo retrieval function
-retriever = Retriever(k=5) 
+retriever = Retriever() 
 def rag(query, retriever=retriever):
-    docs = retriever.retrieve(query=query)
+    docs = retriever.retrieve(query=query, table_name= 'gestion_humana')
     return docs.get_texts_as_str(token=f"\n\n\n{100*'#'}\n")
 
 # Function to create artificial ids
@@ -196,7 +196,7 @@ def webthink(question, example_messages, idx, available_tools, to_print=True, re
     question_messages_info = messages[original_lenght:]
     elapsed_time = time.time() - start_time
     if record == True:
-        with open(f'Question_solving/question_info{idx}.json', 'w', encoding='utf-8') as json_file:
+        with open(f'experiment_longer_few_shots/question_info{idx}.json', 'w', encoding='utf-8') as json_file:
             json_info_dict = {'react_iterations ': react_iterations, 
                               'time consumed': elapsed_time,
                               'messages': question_messages_info}
@@ -207,23 +207,41 @@ def webthink(question, example_messages, idx, available_tools, to_print=True, re
 
 
 def main():
-    example_messages = few_shots_messages_list_creator()
-
+    #example_messages = few_shots_messages_list_creator()
+    with open('few_shot_examples_extended_answers.json', 'r', encoding='utf-8') as archivo:
+        # Paso 3: Usar json.load() para leer el archivo
+        example_messages = json.load(archivo)
+    #breakpoint()
     #Available tools
     available_tools = {
             "rag": rag
         }
     #Create QuestionLoader
     loader = QuestionLoader()
-    for i in range(23, 30):
+    all_questions_info = []
+    for i in range(4, 5):
+        if i % 10 == 0 and i > 0:
+            print("Pausando ejecución...")
+            time.sleep(30)  # Pausa por 30 segundos
+            print("Reanudando ejecución.")
         print('--'*70)
         question = loader.load_question(idx=i)
         gt = loader.get_gt(idx=i)
         answer = webthink(question, example_messages, idx = i+1, available_tools= available_tools, to_print=True, record=True)
+        #breakpoint()
         print('Evaluation Metrics')
         print(f'Prediction: {answer}')
         print(f'Ground Truth: {gt}')
-        #print(get_metrics(answer, gt))
+
+        match = re.search(r'ANSWER\[(.*?)\]', answer)
+        if match:
+            answer = match.group(1)
+        question_info = {'unique_id': i+1, 'question': question, 'qs_response': answer, 'ground_truth': gt}
+        all_questions_info.append(question_info)
+    
+    with open(f'React_GH_answers.json', 'w', encoding='utf-8') as json_file:
+            json.dump(all_questions_info, json_file, ensure_ascii=False, indent=4)
+        
 
 
 

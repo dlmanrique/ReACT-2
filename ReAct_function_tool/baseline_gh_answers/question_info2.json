@@ -1,0 +1,37 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 7.26177453994751,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Que debo considerar para hacer un retiro definitivo de MUTUOCOLOMBIA y luego volver a ahorrar en el nuevamente?\n"
+        },
+        {
+            "content": "Para responder a esta pregunta, necesito buscar información sobre el proceso de retiro definitivo de MUTUOCOLOMBIA y las consideraciones para volver a ahorrar en él posteriormente.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_r7UPjW9x2fEV7rRXtWIlOYYo",
+                    "function": {
+                        "arguments": "{\"query\":\"proceso de retiro definitivo en MUTUOCOLOMBIA\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_r7UPjW9x2fEV7rRXtWIlOYYo",
+            "role": "tool",
+            "name": "rag",
+            "content": "MUTUOCOLOMBIA\nRetiro definitivo:\nRecuerda que, si decides retirarte definitivamente del plan, no podrás volver a ahorrar después de haber cumplido 2 años luego del retiro definitivo.\n1.\tDiligencia el formulario de retiros definitivos aquí.\n2.\tLuego de diligenciar el formulario, te llegará un correo electrónico a tu correo corporativo con toda la información para finalizar el proceso de retiro, este correo te llegará dentro de los primeros 5 días hábiles después de diligenciar el formulario.\n\nImportante: si te retiras del plan antes de que tus aportes hayan sido consolidados (3 años ininterrumpidos en el plan), el dinero aportado por parte del Banco no podrás retirarlo y este pasará a entregarse a los empleados activos que lleven 5 o años o más ininterrumpidos en el fondo.\nLas solicitudes para retiros totales \"libre destinación\" que sean recibidas hasta el día 15, del mes, serán abonadas a los 5 días hábiles del mes siguiente, si son recibidas posterior al día 15 del mes, serán abonadas a los 5 días hábiles del mes subsiguiente.\nLos empleados que realicen solicitudes de retiro total por concepto de: \"Compra de vivienda” el banco les enviará la autorización de retiro y luego se debe validar en Protección que otros requisitos son requeridos. \n\n\n####################################################################################################\nMUTUOCOLOMBIA\n¿Cómo puedo volver a ahorrar después de retirarme definitivamente del plan?\nSi eres partícipe y te retiras voluntariamente del Plan Institucional Mutuocolombia, solo podrás reintegrarte al mismo cuando hayan pasado dos (2) años desde la fecha en que fue aprobado tu retiro. Pasados los dos (2) años desde el retiro, si desear reactivar tu ahorro debes enviar un correo con la solicitud a bienesta@bancolombia.com.co con tu nombre completo, número de documento e indicando en el asunto que deseas activar nuevamente tu ahorro. A tu correo te llegará un instructivo para que grabes en la herramienta SAP el valor que deseas ahorrar.\n\n\n####################################################################################################\nMUTUOCOLOMBIA\nRetiro parcial:\n•\tSólo podrás solicitar un (1) retiro parcial en el año calendario a través de la página web o en una de las oficinas de servicio (si el retiro es para vivienda, conoce toda la información aquí)\n•\tPodrás hacerlo únicamente en los meses de marzo, junio, septiembre o diciembre. El saldo disponible para retirar será de acuerdo al mes, así:\n•\tMarzo y septiembre: podrás retirar tu aporte ordinario como partícipe, el aporte ordinario de la patrocinadora consolidado a tu nombre, tu aporte extraordinario como partícipe y el aporte extraordinario de la patrocinadora consolidado a tu nombre. \n•\tJunio y diciembre: podrás retirar tu aporte ordinario como partícipe y el aporte ordinario de la patrocinadora consolidado a tu nombre.\n\nNo podrás retirar los aportes que fueron realizados durante los tres (3) primeros años.\nImportante: Si tu retiro parcial es para compra de vivienda, la solicitud del retiro debes hacerla a través de la oficina de servicio y presentar documentos de retiros de vivienda.\n\n\n####################################################################################################\nMUTUOCOLOMBIA\nRetiros:\n•\tCuando haces un retiro, Protección te retiene el 7% sobre los intereses que la cuenta en total ha generado.\n•\tSi el retiro es por compra de vivienda, pensión, o porque llevas más de 10 años ahorrando, no se realiza esta retención.\n•\tLos retiros pueden ser transferidos a tu cuenta. Asegúrate que la cuenta inscrita este correcta desde el portal www.proteccion.com.co > Zona transaccional > Módulo de retiros\n•\tPara gestionar algún retiro (excepto retiros parciales para compra de vivienda) ingresa al botón que se expone a continuación, ingresa usuario y contraseña, selecciona opción Transacciones/ Mi ahorro e inversión / Retiros / Clic en el plan Mutucolombia. \n\n\n####################################################################################################\nMUTUOCOLOMBIA\n¿Qué pasará con mi plan si mi contrato laboral finaliza o me retiro de la organización?\nTendrás derecho a todos los aportes ordinarios y extraordinarios que hayas realizado, así como los aportes que la patrocinadora haya realizado y que se encuentren consolidados a tu nombre. Nota: Para ambos casos, el Banco recibe las solicitudes de retiro hasta el día 15 de cada mes (o día hábil anterior si el 15 no es día hábil) y las reporta el día 20 del mismo mes. Estos retiros se pagan el 5to día hábil del mes siguiente."
+        },
+        {
+            "content": "Para hacer un retiro definitivo de MUTUOCOLOMBIA y luego volver a ahorrar en él, debes considerar los siguientes puntos clave:\n\n1. **Proceso de Retiro Definitivo**:\n   - **Formulario de Retiro**: Debes diligenciar el formulario de retiros definitivos.\n   - **Correo de Confirmación**: Recibirás un correo electrónico en tu correo corporativo con la información para finalizar el proceso de retiro dentro de 5 días hábiles después de diligenciar el formulario.\n   - **Consolidación de Aportes**: Si te retiras antes de que tus aportes hayan sido consolidados (3 años ininterrumpidos en el plan), no podrás retirar el dinero aportado por el Banco.\n   - **Solicitud de Retiro**: Las solicitudes recibidas hasta el día 15 serán abonadas a los 5 días hábiles del mes siguiente; las recibidas después del día 15 serán abonadas a los 5 días hábiles del mes subsiguiente.\n\n2. **Reintegración y Nuevo Ahorro**:\n   - **Periodo de Espera**: Después de un retiro definitivo, solo puedes reintegrarte al plan después de 2 años desde la fecha en que se aprobó tu retiro.\n   - **Solicitud de Reingreso**: Pasados los dos años, debes enviar un correo con la solicitud de reingreso a bienesta@bancolombia.com.co con tu nombre completo, número de documento y el valor que deseas ahorrar.\n   - **Instructivo**: Recibirás un instructivo para grabar en la herramienta SAP el valor que deseas ahorrar.\n\nANSWER[Para hacer un retiro definitivo de MUTUCOLOMBIA y volver a ahorrar en él, debes diligenciar el formulario de retiro y esperar 2 años tras el retiro definitivo para poder reintegrarte, enviando una solicitud de reingreso a bienesta@bancolombia.com.co.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

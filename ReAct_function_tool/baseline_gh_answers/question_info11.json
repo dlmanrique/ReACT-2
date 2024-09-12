@@ -1,0 +1,51 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 6.091114282608032,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Entre el auxilio educativo y el subsidio educativo, cual tiene el tope salarial m�s alto?\n"
+        },
+        {
+            "content": "Necesito obtener información sobre los topes salariales de ambos auxilios educativos y subsidios educativos.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_n9Hksfe6Whu7l78wA9Vy6omA",
+                    "function": {
+                        "arguments": "{\"query\": \"tope salarial del auxilio educativo\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                },
+                {
+                    "id": "call_RnpaKKBM0vDyfy1y72dH1gz3",
+                    "function": {
+                        "arguments": "{\"query\": \"tope salarial del subsidio educativo\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_n9Hksfe6Whu7l78wA9Vy6omA",
+            "role": "tool",
+            "name": "rag",
+            "content": "TOPES Y VALORES AUXILIOS Y SUBSIDIOS\nAUXILIO EDUCATIVO\nTOPE SALARIAL AUXILIO EDUCATIVO: $5.444.410\n\n\n####################################################################################################\nTOPES Y VALORES AUXILIOS Y SUBSIDIOS\nSUBSIDIO EDUCATIVO\nTOPE SALARIAL SUBSIDIO EDUCATIVO: $ 4.640.000"
+        },
+        {
+            "tool_call_id": "call_RnpaKKBM0vDyfy1y72dH1gz3",
+            "role": "tool",
+            "name": "rag",
+            "content": "TOPES Y VALORES AUXILIOS Y SUBSIDIOS\nSUBSIDIO EDUCATIVO\nTOPE SALARIAL SUBSIDIO EDUCATIVO: $ 4.640.000\n\n\n####################################################################################################\nTOPES Y VALORES AUXILIOS Y SUBSIDIOS\nAUXILIO EDUCATIVO\nTOPE SALARIAL AUXILIO EDUCATIVO: $5.444.410\n\n\n####################################################################################################\nTOPES Y VALORES AUXILIOS Y SUBSIDIOS\nSUBSIDIO GASTOS NOTARIALES Y DE REGISTRO\nTOPE SALARIAL SUBSIDIO GASTOS NOTARIALES Y DE REGISTRO: $ 4.640.000 (4 SMMLV)"
+        },
+        {
+            "content": "El tope salarial del auxilio educativo es de \\$5.444.410, mientras que el del subsidio educativo es de \\$4.640.000. Por lo tanto, el auxilio educativo tiene el tope salarial más alto. ANSWER[El tope salarial del auxilio educativo es más alto, con \\$5.444.410, comparado con el del subsidio educativo que es de \\$4.640.000]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

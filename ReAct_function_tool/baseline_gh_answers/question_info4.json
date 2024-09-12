@@ -1,0 +1,37 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 8.397312879562378,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Cuales son las condiciones de destinacion del primer y segundo credito de vehiculo para empleados?\n"
+        },
+        {
+            "content": "Para responder a esta pregunta, necesito consultar las condiciones de destinación del primer y segundo crédito de vehículo para empleados.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_abwBJJzvfzStf3B2SU2fT7TH",
+                    "function": {
+                        "arguments": "{\"query\":\"condiciones de destinación del primer y segundo crédito de vehículo para empleados\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_abwBJJzvfzStf3B2SU2fT7TH",
+            "role": "tool",
+            "name": "rag",
+            "content": "Crédito de vehículo para empleados\nDestinación del vehículo para empleados\n¿En qué puedo utilizar el crédito?\n\nLa adquisición de un (1) vehículo de servicio particular y de uso personal del empleado. Si se trata de vehículo usado tener presente:\n•\tNo tener prenda (con el crédito no es viable pagar liberación de prenda de dicho vehículo), el banco realiza el desembolso cuando la garantía (prenda) este a nombre de Bancolombia. Si el vehículo está a nombre del empleado, el crédito no es viable.\n•\tEste no podrá tener más de diez (10) años de antigüedad.\n•\tLa cancelación de liberación de prenda con una entidad financiera, por obligación contraída con anterioridad a la aprobación del crédito, con destino adquisición de vehículo de servicio particular y de uso personal del empleado.\n•\tEste crédito no puede ser utilizado para compra de véhiculo a cónyuge o compañero permanente para primeros y segundos créditos.\n•\tLiberación de prenda, tener en cuenta:\n1.\tEl crédito que adeuda el empleado a la otra entidad debe ser línea vehículo y estar a nombre del empleado.\n2.\tEn la matrícula solo debe figurar el empleado.\n•\tEn ningún caso se destinará este crédito para compra de moto.\n•\tLa asignación de esta línea de crédito no permite que el vehículo sea utilizado para servicio público de transporte o servicio de transporte a través de aplicaciones virtuales como Uber, Cabyfi, entre otros.\n\n\n####################################################################################################\nCrédito de vehículo para empleados\nDestinación Segundo crédito de Vehículo\n¿En qué puedo utilizar el crédito?\nLa adquisición de un (1) vehículo de servicio particular y de uso personal del empleado. Si se trata de vehículo usado tener presente:\n•\tNo tener prenda (con el crédito no es viable pagar liberación de prenda de dicho vehículo), el banco realiza el desembolso cuando la garantía (prenda) este a nombre de Bancolombia.\n•\tEste no podrá tener más de diez (10) años de antigüedad.\n•\tLa cancelación de liberación de prenda con una entidad financiera, por obligación contraída con anterioridad a la aprobación del crédito, con destino adquisición de vehículo de servicio particular y de uso personal del empleado. Se debe tener en cuenta que el avalúo comercial del vehículo debe ser mayor o igual al valor adeudado. En ningún caso se destinará este crédito para compra de moto.\n•\tLa asignación de esta línea de crédito no permite que el vehículo sea utilizado para servicio público de transporte o servicio de transporte a través de aplicaciones virtuales como Uber, Cabyfi, entre otros.\n\n\n####################################################################################################\nCrédito de vehículo para empleados\nSegundo crédito para vehículo de empleados\nSegundo crédito\n¿Quiénes pueden solicitar este crédito?\nPueden ser beneficiarios del crédito de vehículo los empleados con contrato a término indefinido que estén desempeñando cargos del mapa de cargos profesionales dentro de la estructura de BANCOLOMBIA, es decir, de nivel igual o superior al de Analista, que demuestren que se caractericen por su consagración al trabajo, destacado rendimiento y lealtad con la institución, y cumplir con los siguientes requisitos:\n•\tEsperar 2 años después de la fecha de tu último desembolso de crédito de vehículo.\n•\tBuen desempeño (concepto del Jefe), Garantía Prenda a favor del Banco. El funcionario deberá nombrar beneficiario al Banco, al tomar los seguros de vida, responsabilidad civil, daños y hurto.\n•\tPuedes radicar tu solicitud por SAP sin haber cancelado tu crédito anterior, y una vez el PIC realice el estudio del crédito y su resultado sea positivo, te solicitará por medio de correo electrónico que canceles el saldo de tu crédito actual.\n\n¿Cuánto me prestan?\n•\tCuantía: hasta 13 sueldos básicos o integrales del empleado, con un tope de 120 smmlv.\n\n¿Cómo lo pago?\n•\tPlazo: 5 años.\n•\tTasa: DTF variable trimestralmente (26 de marzo, 26 de Junio, 26 de Septiembre y 26 de diciembre).\n•\tAmortización sueldo básico: Cuota mensual: intereses y capital, abono semestral en primas => 30% de la prima total, cada prima siguiente se incrementa en el 3% con respecto a la anterior + seguro de vida.\n•\tAmortización salario integral: Cuota que incluye capital e intereses + seguro de vida, cambia trimestralmente."
+        },
+        {
+            "content": "He obtenido las condiciones de destinación para el primer y segundo crédito de vehículo para empleados:\n\n**Primer Crédito de Vehículo para Empleados:**\n1. Adquisición de un vehículo de servicio particular y de uso personal del empleado.\n2. El vehículo usado no debe tener prenda y no debe tener más de diez (10) años de antigüedad.\n3. El crédito no puede ser utilizado para liberar prenda de un vehículo con el banco actual ni para la compra de vehículo a cónyuge o compañero permanente.\n4. No se permite la compra de moto.\n5. El vehículo no puede ser utilizado para servicio público de transporte ni a través de aplicaciones virtuales como Uber o Cabify.\n\n**Segundo Crédito de Vehículo para Empleados:**\n1. Adquisición de un segundo vehículo de servicio particular y de uso personal del empleado, bajo las mismas condiciones que el primer crédito.\n2. El vehículo usado no debe tener prenda y no debe tener más de diez (10) años de antigüedad.\n3. El avalúo comercial del vehículo debe ser mayor o igual al valor adeudado.\n4. No se permite la compra de moto.\n5. El vehículo no puede ser utilizado para servicio público de transporte ni a través de aplicaciones virtuales como Uber o Cabify.\n\nANSWER[Las condiciones de destinación del primer y segundo crédito de vehículo para empleados son similares y permiten la adquisición de un vehículo de servicio particular y de uso personal del empleado, con restricciones similares en cuanto a prenda, antigüedad del vehículo, y uso del vehículo.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

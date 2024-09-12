@@ -1,0 +1,51 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 9.410300493240356,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Si mi jefe esta ausente y requiero solicitar mis vacaciones, como puedo hacerlo? Y cual es el plazo limite para la grabacion y aprobacion de vacaciones?\n"
+        },
+        {
+            "content": "Tengo que investigar cual es el proceso para solicitar vacaciones cuando el jefe esta ausente y el plazo limite para la grabacion y aprobacion de vacaciones.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_qmbiu3OL7ntyL4MMSedh5Tbh",
+                    "function": {
+                        "arguments": "{\"query\": \"Cómo solicitar vacaciones cuando el jefe está ausente\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                },
+                {
+                    "id": "call_WOrheqy0sSAdSPBU5qQsbM3j",
+                    "function": {
+                        "arguments": "{\"query\": \"Plazo límite para la grabación y aprobación de vacaciones\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_qmbiu3OL7ntyL4MMSedh5Tbh",
+            "role": "tool",
+            "name": "rag",
+            "content": "Vacaciones\n¿Cómo solicitar las vacaciones de un empleado ausente? \nEl jefe inmediato puede realizar la grabación directa de las vacaciones del empleado que se encuentra ausente, solo debe tener presente que las debe grabar con mes de anticipación. Ver instructivo “jefe grabar directo vacaciones”.\n\n\n####################################################################################################\nVacaciones\nSolicitud de vacaciones\n•El empleado debe grabar las fechas de disfrute de vacaciones a través del Portal de Autoservicio del Empleado en SAP, y el jefe inmediato, debe realizar la aprobación a través del Portal de Autoservicio del jefe en SAP, para que éstas queden registradas en forma definitiva en la nómina, de lo contrario el sistema no las tomará. Consulta el instructivo publicado en ¿y cómo lo hago?: https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/vacaciones.aspx para que el empleado grabe sus vacaciones o para que el Jefe apruebe las vacaciones de los empleados.\n• Los jefes inmediatos pueden grabar directamente, las solicitudes de vacaciones de sus empleados a cargo a través del Portal de Autoservicio del jefe en SAP, sin necesidad de una solicitud por parte del empleado. Aplica para empleados que se encuentren Ausentes o sin acceso al Portal de empleados. Pueden hacerlo siguiendo el paso a paso descrito en el Instructivo para que el Jefe grabe las vacaciones de los colaboradores publicado en ¿y cómo lo hago?: https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/vacaciones.aspx.\n• Los jefes antes de ausentarse por vacaciones, incapacidades, licencias y demás eventos, deben realizar el proceso para DELEGAR a otro jefe de su \"código de gestor de tiempos\" y su \"bandeja de tareas\" de SAP, para evitar inconvenientes durante su ausencia con la aprobación y pago de las vacaciones de los empleados a su cargo.\n• SI el jefe ausente, no dejó la “Bandeja de Tareas” delegada, deben llamar a la Mesa de Servicios Mateo y radicar un incidente, solicitando la delegación de la bandeja al jefe a cargo, indicando las fechas de reemplazo.\n• SI el empleado radicó su solicitud de vacaciones y se encuentra pendiente de aprobación del jefe. Pero el jefe se encuentra ausente, deben llamar a la Mesa de Servicios Mateo y radicar un incidente, solicitando la delegación del “flujo de vacaciones” al jefe que se encuentre a Cargo, indicar el número de cédula del empleado que tenga flujo pendiente de aprobación.\n\n\n####################################################################################################\nVacaciones\n¿Si estoy ausente y mi jefe también, el delegado de tiempos que SI tiene rol de jefe puede grabar mi novedad de vacaciones? \nSí, el delegado de tiempos que es jefe podrá grabar las novedades de vacaciones, permiso calamidad doméstica, permiso luto, permiso luto empleado fin de semana, permiso matrimonio y horas extras.\n\n\n####################################################################################################\nVacaciones\n¿Cómo valido desde el rol de jefe si las vacaciones que le aprobé a unos de mis colaboradores quedaron aprobadas? \nPara consultar el Estado de una solicitud de vacaciones, ingresamos por el portal de autoservicio del Jefe/Mi equipo de trabajo/ información general/seleccionar el empleado/notificación de novedades y damos clic en la opción:\n“Mostrar Resumen de absentismo” campo ESTADO. “Enviados”: La solicitud está pendiente de aprobación del jefe. \n“Autorizado”: La solicitud ya está aprobada y está en el sistema de nómina para liquidación. \n“Rechazados”: La solicitud está rechazada por el jefe o por el sistema por que se intentó aprobar fuera de fechas. Ver instructivo “Consultar ESTADO aprobación vacaciones PORTAL JEFE” publicado en ¿Y cómo lo hago? / Vacaciones.\n\n\n####################################################################################################\nVacaciones\n¿Si estoy ausente y mi jefe también, el delegado de tiempos que NO tiene rol de jefe puede grabar mi novedad de vacaciones? \nNo. El delegado de tiempos que no es jefe sólo podrá grabar las novedades de permiso calamidad doméstica, permiso luto, permiso luto empleado, fin de semana, permiso matrimonio y horas extras. "
+        },
+        {
+            "tool_call_id": "call_WOrheqy0sSAdSPBU5qQsbM3j",
+            "role": "tool",
+            "name": "rag",
+            "content": "Vacaciones\nSolicitud de vacaciones\n• El “plazo límite” para la grabación y aprobación de vacaciones es la fecha hasta la cual esté habilitado el “Portal de Autoservicio SAP” en la quincena inmediatamente anterior a la fecha de inicio de las vacaciones (independientemente del número de días de vacaciones que se tomen), pues el pago de la “prima extralegal o bonificación de vacaciones” se efectúa de forma automática en la nómina de la quincena anterior a la fecha de salida. Consulta el Calendario de fechas límite para grabación publicado en ¿y cómo lo hago?: https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/vacaciones.aspx .\n• No se permite grabar, ni aprobar vacaciones con fecha de salida de la quincena vigente (actual), ni mucho menos con fecha de salida de quincenas anteriores.\n• Si por algún motivo, disfrutó de las vacaciones en tiempo y NO las registró en el sistema de nómina dentro de los tiempos establecidos, deberá registrarlas con la fecha más próxima permitida por el sistema y en conjunto con el jefe asumir los RIESGOS en Seguridad Social y solicitar el desbloqueo de usuarios radicando un pedido por USM.\n• Si por algún motivo, NO realizó la solicitud de las vacaciones dentro de los tiempos permitidos por el sistema (fuera de fechas). Le recomendamos realizar la reprogramación de estas y realizar el proceso de grabación por el portal de SAP.\n• Si una solicitud de vacaciones está grabada por el empleado, pero el jefe aún no la ha aprobado en SAP, y se necesita modificarla o borrarla, el jefe debe rechazar la solicitud en SAP (siempre y cuando aún no hayan sido pagadas) para que luego el empleado la pueda volver a grabar.\n• Si una solicitud de vacaciones ya está grabada y aprobada por el jefe a través del portal SAP, Y necesita modificar (reprogramar) o cancelar (Borrar). Primero debe realizar la solicitud de cancelación (Ver pestaña Cancelar Vacaciones o Activación de usuarios) para borrar la novedad del sistema y luego debe volver a grabarlas a través del portal SAP."
+        },
+        {
+            "content": "### Pensamiento\nSi tu jefe está ausente y necesitas solicitar tus vacaciones, debes saber cómo gestionar esto y cuál es el plazo límite para la aprobación de las vacaciones. Aquí está el proceso basado en la información obtenida:\n\n**Para Solicitar Vacaciones:**\n\n1. **Solicitud de Vacaciones:**\n   - El empleado debe grabar las fechas de sus vacaciones a través del Portal de Autoservicio del Empleado en SAP.\n   - El jefe inmediato debe aprobar dichas vacaciones a través del Portal del Jefe en SAP.\n\n2. **Si el jefe está ausente:**\n   - **Delegación de tareas:** El jefe ausente debe haber delegado su \"bandeja de tareas\" a otro jefe para evitar inconvenientes.\n   - **Sin delegación:** Si no se hizo la delegación, se debe contactar a la Mesa de Servicios Mateo para solicitar la delegación de la \"bandeja de tareas\" al jefe a cargo.\n\n**Plazo Límite:**\n3. **Grabación y Aprobación:**\n   - La fecha límite para grabar y aprobar las vacaciones es la quincena anterior a la fecha de inicio de tus vacaciones.\n\n### Observacion\n1. **Para solicitar mis vacaciones si mi jefe está ausente:**\n   - Llamar a la Mesa de Servicios Mateo para delegar la \"bandeja de tareas\" al jefe a cargo si la delegación no se hizo antes de la ausencia.\n\n2. **Plazo límite para la grabación y aprobación:**\n   - Es la fecha en la quincena anterior a la fecha de inicio de las vacaciones, ya que el sistema de nómina necesita esta información antes para procesar la \"prima extralegal o bonificación de vacaciones\".\n\n### WARNING\nEs crucial seguir estos pasos y cumplir con los plazos establecidos para evitar la interrupción del pago y aprobación de tus vacaciones.\n\nANSWER[Si tu jefe está ausente, debes contactar a la Mesa de Servicios Mateo para delegar la aprobación al jefe a cargo. El plazo límite para la grabación y aprobación de las vacaciones es la fecha en la quincena anterior a la fecha de inicio de las vacaciones.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

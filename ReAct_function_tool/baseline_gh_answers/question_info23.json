@@ -1,0 +1,58 @@
+{
+    "react_iterations ": 3,
+    "time consumed": 4.517049551010132,
+    "messages": [
+        {
+            "role": "user",
+            "content": "El auxilio de idiomas o el auxilio por nacimiento o adpocion constituyen parte del salario?\n"
+        },
+        {
+            "content": "Necesito buscar si el auxilio de idiomas o el auxilio por nacimiento o adopcion constituyen parte del salario.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_t9E9bWFPVIYYzUSjdqyTqMlv",
+                    "function": {
+                        "arguments": "{\n\"query\": \"El auxilio de idiomas constituye parte del salario?\"\n}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_t9E9bWFPVIYYzUSjdqyTqMlv",
+            "role": "tool",
+            "name": "rag",
+            "content": "Auxilios y subsidios\nAUXILIO IDIOMAS\nA partir de la vigencia de la presente convención, el BANCO crea un fondo para auxilios de idiomas para empleados amparados por la Convención Colectiva, por un valor de quinientos millones de pesos ($500.000.000) por cada año convencional.\nPara ser beneficiado con el auxilio de idiomas, el empleado debe realizar la solicitud a través de Conectados (ver instructivo crear solicitud), que estará disponible hasta la distribución total del valor del fondo asignado.\nValor del Auxilio: El auxilio pagado por el Banco podrá ser de hasta el 40% del valor del curso, sin exceder de $400.000 anuales por empleado.\nCondiciones y requisitos para la aprobación:\n•\tAplica para empleados convencionados, con contrato laboral con Bancolombia (fijo e indefinido).\n•\tEl empleado debe estar estudiando al momento de postularse para el auxilio.\n•\tAplica si el idioma está como prerrequisito de grado de una carrera, a través de un curso que se paga independiente a la matrícula de esta.\n•\tAplica para cualquier idioma y sólo se pagará por un curso, en caso de que el empleado este estudiando varios idiomas en forma simultánea. El empleado debe elegir para cual curso solicitará el auxilio.\n•\tEl auxilio de idiomas se debe solicitar una sola vez por año.\n•\tEl valor que se apruebe de auxilio será entregado al empleado a través de nómina, es decir, el pago a la Institución Educativa lo realiza el empleado al 100%.\n•\tEl jefe inmediato será notificado de la solicitud del auxilio de idiomas, no requiere aprobación de jefe.\n•\tEl auxilio no tiene tope salarial y no constituye salario.\n•\t¡Ten en cuenta! Si realizaste un único pago por todo el curso, y solicitaste el auxilio, no hay lugar a posteriores solicitudes del mismo. \n\nDocumento requerido: Certificado vigente emitido por la Institución Educativa Formal y con personería jurídica, donde conste lo siguiente:\n•\tNombre completo y documento del empleado.\n•\tNombre del idioma.\n•\tFactura o comprobante de pago año actual.\n•\tCon estado matriculado y estudiando en la actualidad.\n   \nEn los siguientes escenarios NO aplica el auxilio:\n•\tCursos gratuitos.\n•\tCarrera de idiomas.\n•\tCuando el idioma se encuentra como una materia/asignatura dentro del pensum de una carrera.\n•\tSi al momento del pago del auxilio, el empleado se encuentra retirado de la organización.\n•\tPara \"Aprendices\" o \"Estudiantes en Práctica\" (bajo ninguna modalidad)."
+        },
+        {
+            "content": "El auxilio de idiomas no constituye salario. Ahora tengo que investigar sobre el auxilio por nacimiento o adopcion.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_4NOMwBwoAJRKfuAftcaW3DrD",
+                    "function": {
+                        "arguments": "{\n\"query\": \"El auxilio por nacimiento o adopcion constituye parte del salario?\"\n}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_4NOMwBwoAJRKfuAftcaW3DrD",
+            "role": "tool",
+            "name": "rag",
+            "content": "Auxilios y subsidios\nAUXILIO POR NACIMIENTO Y ADOPCIÓN\nEste auxilio puede ser solicitado:\n* Por Nacimiento vivo o muerto de Hijo del trabajador.\n * Por Adopción legal de un hijo.\n * Por Aborto no provocado después de tres (3) meses de gestación.\n\nDocumentos auxilio por nacimiento y adopción:\n* Por Nacimiento vivo: Registro civil de nacimiento del hijo.\n* Por Adopción legal: Soportes legales de adopción.\n* Por Aborto: \"Historia clínica\" o \"certificado médico\" donde se evidencia el aborto no provocado después de 3 meses de gestación.\n\nPara tener en cuenta: \n•\tVigencia del valor del auxilio y del tope salarial: De enero 01/2023 a octubre 31/2023.\n•\tEste auxilio NO constituye salario.\n•\tSi el hijo nace \"muerto\", el trabajador tendrá también derecho al auxilio por \"Fallecimiento\".\n•\t¡Importante! Antes de realizar la solicitud para el auxilio, recuerda que debes tener registrado el Hijo que nace vivo o es adoptado en la sección \"Dependientes\" en Conectados (Consulta instructivo en el ¿Y cómo lo hago/ Auxilios y Subsidios).\n•\tEn el caso de Aborto no provocado después de 3 meses de gestación, el bebé No puede ser registrado en la base de familiares del empleado en Conectados.\n•\tLa solicitud de auxilio de Nacimiento por Aborto no provocado después de 3 meses de gestación debe realizarse ingresando https://forms.office.com/pages/responsepage.aspx?id=vUTitZLEW0mLEGG_1FPkIyLmRFglQJVJoLcqvrCYAglUMkxGQ0xLUDgzSjFNTjJOU1c0U0oxTTVXVi4u&web=1&wdLOR=cCE95B962-1EBF-4856-9A13-214F57F6B5DD\n Las solicitudes de auxilio por Nacimiento de hijo vivo o por Adopción deben ser radicadas a través de Conectados. (Consulta instructivo en el ¿Y cómo lo hago? / Auxilios y Subsidios)\n•\tSe recomienda que la documentación tenga una vigencia no mayor a 9 meses, debido a que esta fecha determinará el valor a pagar, ya que por convención el valor cambia cada año.\n•\tEn todos los casos, los documentos soporte deben ser anexados en el momento de realizar la solicitud directamente en Conectados.\n\n\n####################################################################################################\nTOPES Y VALORES AUXILIOS Y SUBSIDIOS\nAUXILIO POR NACIMIENTO Y ADOPCIÓN DE HIJOS\nVALOR AUXILIO POR NACIMIENTO Y ADOPCIÓN DE HIJOS: $743.514\nTOPE SALARIAL AUXILIO POR NACIMIENTO Y ADOPCIÓN DE HIJOS: $5.444.410"
+        },
+        {
+            "content": "El auxilio por nacimiento o adopción no constituye salario. Entonces, ambos, el auxilio de idiomas y el auxilio por nacimiento o adopción, no constituyen parte del salario. \n\nANSWER[El auxilio de idiomas y el auxilio por nacimiento o adopción no constituyen parte del salario.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

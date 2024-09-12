@@ -1,0 +1,58 @@
+{
+    "react_iterations ": 3,
+    "time consumed": 5.596830368041992,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Cual es el monto del auxilio por fallecimiento de un conyuge y este dinero haria parte de mi salario?\n"
+        },
+        {
+            "content": "Primero tengo que buscar el monto del auxilio por fallecimiento de un conyuge, y despues averiguar si ese dinero haria parte del salario.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_D5aFGAyWQudS3LzxurfjjD5L",
+                    "function": {
+                        "arguments": "{\n\"query\": \"monto del auxilio por fallecimiento de un conyuge\"\n}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_D5aFGAyWQudS3LzxurfjjD5L",
+            "role": "tool",
+            "name": "rag",
+            "content": "TOPES Y VALORES AUXILIOS Y SUBSIDIOS\nAUXILIO POR FALLECIMIENTO FAMILIARES – CONYUGE, COMPAÑERO (A) PERMANENTE, HIJO E HIJO NACIDO MUERTO\nVALOR AUXILIO POR FALLECIMIENTO FAMILIARES – CONYUGE, COMPAÑERO (A) PERMANENTE, HIJO E HIJO NACIDO MUERTO: $4.461.046\nTOPE SALARIAL AUXILIO POR FALLECIMIENTO FAMILIARES – CONYUGE, COMPAÑERO (A) PERMANENTE, HIJO E HIJO NACIDO MUERTO: $5.444.410\nVALOR AUXILIO POR FALLECIMIENTO FAMILIARES – PADRES Y HERMANO (A): $3.420.130\nTOPE SALARIAL AUXILIO POR FALLECIMIENTO FAMILIARES – PADRES Y HERMANO (A): $5.444.410"
+        },
+        {
+            "content": "El monto del auxilio por fallecimiento de un conyuge es $4.461.046. Ahora averiguar si hace parte de tu salario.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_19cssc5rIaj20Nw05ngyf2qQ",
+                    "function": {
+                        "arguments": "{\"query\":\"El auxilio por fallecimiento de un conyuge hace parte del salario?\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_19cssc5rIaj20Nw05ngyf2qQ",
+            "role": "tool",
+            "name": "rag",
+            "content": "TOPES Y VALORES AUXILIOS Y SUBSIDIOS\nAUXILIO POR FALLECIMIENTO FAMILIARES – CONYUGE, COMPAÑERO (A) PERMANENTE, HIJO E HIJO NACIDO MUERTO\nVALOR AUXILIO POR FALLECIMIENTO FAMILIARES – CONYUGE, COMPAÑERO (A) PERMANENTE, HIJO E HIJO NACIDO MUERTO: $4.461.046\nTOPE SALARIAL AUXILIO POR FALLECIMIENTO FAMILIARES – CONYUGE, COMPAÑERO (A) PERMANENTE, HIJO E HIJO NACIDO MUERTO: $5.444.410\nVALOR AUXILIO POR FALLECIMIENTO FAMILIARES – PADRES Y HERMANO (A): $3.420.130\nTOPE SALARIAL AUXILIO POR FALLECIMIENTO FAMILIARES – PADRES Y HERMANO (A): $5.444.410\n\n\n####################################################################################################\nAuxilios y subsidios\nAUXILIO POR FALLECIMIENTO DE FAMILIARES: \nDeben tener presente las siguientes condiciones para el auxilio por fallecimiento de un familiar:\n•\tVigencia del valor del auxilio y del tope salarial: De Enero 01/2023 a Octubre 31/2023.\n•\tEste auxilio NO constituye salario.\n•\tLas familiares por quienes se solicite auxilio de Fallecimiento deben \"depender económicamente\" del empleado.\n•\t¡Recuerda! Los cónyuges, compañeras(os) permanentes, hijos, padres y hermanos deben estar previamente registrados en la sección “Dependientes” en Conectados. Sigue el paso a paso publicado en el ¿Y cómo lo hago? / Auxilios y Subsidios para el registro: https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/Auxilios-y-Subsidios.aspx\n\n•\tLa solicitud de auxilio de Fallecimiento por Hijo \"nacido muerto\" (pérdida del bebé después de 5 meses de gestación) debe realizarse ingresando al siguiente formulario: https://forms.office.com/r/hQF5ZU8zsG \n•\tLas solicitudes de auxilio por Fallecimiento de cónyuges, compañeras(o) permanentes, hijos, padres o hermanos deben ser radicadas a través de Conectados. Sigue el paso a paso publicado en el ¿Y cómo lo hago? / Auxilios y Subsidios para el registro: https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/Auxilios-y-Subsidios.aspx\n•\t\n•\tSe recomienda que la documentación tenga una vigencia no mayor a 9 meses, debido a que esta fecha determinará el valor a pagar, ya que por convención el valor cambia cada año.\n\n\n\nEste auxilio de fallecimiento aplica por: \n•\tCónyuge o compañera(o) permanente del trabajador, \n•\thijo del trabajador, \n•\tpérdida del bebé después de cinco (5) meses de gestación (hijo “nacido muerto”), \n•\tPadres del colaborador (Que dependan económicamente del empleado)\n•\thermanos(as) del colaborador (Que dependan económicamente del empleado)\nEl valor del auxilio de fallecimiento y el tope salarial lo puedes consultar en ¿Y cómo lo hago? / Auxilios y Subsidios: https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/Auxilios-y-Subsidios.aspx\nDocumentos requeridos para la solicitud del auxilio por fallecimiento:\n* Para cónyuge, compañera(o) permanente e hijos: Certificado de defunción.\n* Para hijo \"nacido muerto\": Historia clínica, certificado médico, certificado de nacido muerto o certificado de defunción donde se evidencie la pérdida del bebé después de 5 meses de gestación.\n\n* Padres y hermanos: Certificado de Defunción (en todos los casos).\n* Si el familiar No era Pensionado o Jubilado: Declaración Extra-juicio (hecha directamente por el empleado) donde se certifique que el familiar:\n   1) Dependía económicamente del empleado\n   2) No era pensionado ni jubilado\n* Si el familiar era Pensionado o Jubilado: Última colilla de pago de la pensión o certificado de pensión, donde conste que el valor de la pensión No supera 3 SMMLV (si esto se cumple No es necesario presentar declaración extra-juicio y se asume la dependencia económica sobre el empleado"
+        },
+        {
+            "content": "El auxilio monetario por fallecimiento de un conyuge es de $4.461.046, este auxilio \"NO constituye salario\". ANSWER[El auxilio por fallecimiento de un conyuge es de $4.461.046. Este auxilio \"NO constituye salario\".]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

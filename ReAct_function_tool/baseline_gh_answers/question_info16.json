@@ -1,0 +1,37 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 3.782072067260742,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Cual es el monto del prestamo y el valor de los intereses para el credito de vivienda especial?\n"
+        },
+        {
+            "content": "Necesito buscar \"credito de vivienda especial\". Primero identificamos el monto del préstamo y luego el valor de los intereses.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_MyCxTQ8XfjR5zc0GTwJW0iKX",
+                    "function": {
+                        "arguments": "{\"query\":\"credito de vivienda especial\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_MyCxTQ8XfjR5zc0GTwJW0iKX",
+            "role": "tool",
+            "name": "rag",
+            "content": "Crédito de vivienda Especial Para Empleados\nGeneralidades, monto de préstamo y forma de pago\nCrédito de vivienda especial \n\nSi un colaborador requiere información sobre el crédito de vivienda especial: Amortización, tasa, tope máximo y los requisitos para este crédito, debemos acompañarlo en el proceso documentado en la siguiente ruta:\nPortal del empleado / Para mí / Mis beneficios / Calidad de vida/ créditos / Crédito de Vivienda especial\nURL: https://bancolombia.sharepoint.com/sites/co-cvi/SitePages/creditoviviendaespecial.aspx \n\n CALIDAD DE VIDA\nEste beneficio aplica para empleados cobijados por el estatuto de beneficios y convención colectiva.\n¿Quiénes pueden solicitar este crédito?\nTodos los empleados de BANCOLOMBIA que se caractericen por su consagración al trabajo, destacado rendimiento y lealtad con la organización, que estén desempeñando cargos del mapa de cargos profesionales, empleados de Filiales en Colombia y los empleados que pertenecen al escalafón operativo, siempre y cuando no utilicen simultáneamente la línea de vivienda convencional y su contrato sea a término indefinido.\n\n¿Cuánto me prestan?\n•\tSe podrá financiar el 80% de la vivienda para VIS (Vivienda de interés social, valor comercial hasta 135 SMMLV) y 70% si es no VIS, de acuerdo a la capacidad adquisitiva del colaborador.\n•\tPréstamos para reformas en viviendas superiores a VIS, se prestará hasta el 100% del valor de la reforma mientras no supere el 70% del avalúo total. Importante: se puede financiar el 100% del valor de la reforma sin superar el 70% del valor del saldo de la deuda de la adquisición más la nueva reforma.\n•\tSe podrán desembolsar créditos de categoría vivienda (definidos bajo la normatividad de Ley de vivienda) en UVR y en PESOS TASA FIJA.\n¿Cómo lo pago?\nEl plazo mínimo para el pago de este crédito es de 5 años y el máximo de 20 años. El valor de la cuota se calculará de acuerdo con el tipo de interés que haya elegido el empleado. La cuota deberá cancelarse mensualmente y será el empleado quién defina cómo lo realizará.\n•\tAmortización: de acuerdo con los planes de amortización establecidos por la ley de vivienda en UVR o PESOS.\n•\tPlazo: desde 5 hasta 20 años.\n\n\n####################################################################################################\nCréditos\n¿El crédito de Vivienda Especial se puede utilizar para comprar lote?\nNo, los créditos otorgados no podrán ser utilizados en la compra de diferentes de vivienda: como lotes, casas de recreo, locales o bodegas."
+        },
+        {
+            "content": "El monto del prestamo y el valor de los intereses dependen de si se trata de una vivienda de interes social (VIS) o no.\n\nPara VIS (Vivienda de Interes Social, con valor comercial hasta 135 SMMLV), se podra financiar hasta el 80% de la vivienda. Para una vivienda no VIS, se podra financiar hasta el 70%.\n\nLos intereses y la cuota mensual se calcularan de acuerdo con el tipo de interes y el plan de amortizacion elegido por el empleado para pagar a un plazo hallado de entre 5 y 20 años.\n\nANSWER[El monto del prestamo para el credito de vivienda especial es hasta el 80% del valor de la vivienda para VIS y hasta el 70% para no VIS, sujeto a la capacidad adquisitiva del colaborador. El valor de los intereses depende del tipo de interes que se elija y de los planes de amortizacion establecidos para el plazo de 5 a 20 años]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

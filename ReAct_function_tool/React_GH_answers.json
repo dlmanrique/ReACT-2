@@ -1,0 +1,8 @@
+[
+    {
+        "unique_id": 5,
+        "question": "Cual es el monto que presta Bancolombia a empleados de la convencion colectiva para su primer y segundo credito de vivienda respectivamente?",
+        "qs_response": "ANSWER[Bancolombia ofrece los siguientes montos para empleados de la convención colectiva en sus créditos de vivienda:\n\n### Primer Crédito de Vivienda:\n- **Monto**: 70 veces el salario del empleado con un tope mínimo de $99.433.625.\n- **Plazo**: Hasta 20 años.\n- **Amortización**: Cuota mensual del 21% del salario básico mensual del empleado, abono trimestral de las cesantías acumuladas y 30% de las primas de servicio (legal y extralegal).\n- **Tasa**: Tasa fija del 4.8% nominal anual mes vencido.\n\n### Segundo Crédito de Vivienda:\n- **Monto**: Hasta el 70% del resultado que da multiplicar el salario del empleado 70 veces.\n- **Plazo**: Hasta 20 años.\n- **Amortización**: Cuota mensual del 21% del salario básico mensual del empleado, abono trimestral de las cesantías acumuladas y 30% de las primas de servicio (legal y extralegal).\n- **Tasa**: Tasa fija del 4.8% nominal anual mes vencido.]",
+        "ground_truth": "Primer cr�dito:\n70 veces el salario del empleado con un tope m�nimo de $99.433.625.\nSegundo cr�dito:\nEl monto m�ximo de pr�stamo para el segundo cr�dito de vivienda es el 70% de 70 veces el salario del empleado."
+    }
+]

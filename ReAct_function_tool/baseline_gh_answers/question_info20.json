@@ -1,0 +1,58 @@
+{
+    "react_iterations ": 3,
+    "time consumed": 7.917070388793945,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Como consulto cuantos dias de vacaciones tengo pendientes? Y en cuales meses no deberia salir a vacaciones?\n"
+        },
+        {
+            "content": "Necesito buscar cómo consultar días de vacaciones pendientes y saber cuáles son los meses menos ideales para tomar vacaciones. Primero, encontraré cómo consultar los días de vacaciones pendientes, luego buscaré recomendaciones sobre meses no deseables para vacaciones.\n\nPensamiento: Puedo resolver las dos preguntas sucesivamente y resumir finalmente las dos respuestas.\n\n### Primer Paso: Cómo consultar días de vacaciones pendientes.\n",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_KsvbQob8LrHbzf38pWmbE4Bh",
+                    "function": {
+                        "arguments": "{\"query\":\"cómo consultar días de vacaciones pendientes\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_KsvbQob8LrHbzf38pWmbE4Bh",
+            "role": "tool",
+            "name": "rag",
+            "content": "Vacaciones\nConsulta cantidad de días pendientes de vacaciones\nPara consultar la cantidad de días de vacaciones \"Pendientes por disfrutar\" seguir las siguientes indicaciones:\nIngresa a la ruta: Intranet/Para mí/Portal SAP/Autoservicio del empleado (COL)/Nómina y Gestión de Tiempos/Gestión de Tiempos/Resumen de contingentes y sigue el paso a paso descrito en el instructivo publicado en ¿y cómo lo hago?: https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/vacaciones.aspx llamado guía portal empleado o guía portal jefe.\nEl número de días pendientes por disfrutar de cada periodo causado se encuentra en la columna llamada \"Restante\".\n\n\n####################################################################################################\nVacaciones\n¿Cómo consultar cuántos días de vacaciones tiene pendientes (acumulados) por disfrutar alguno de mis empleados a cargo? \nPara consultar los días pendientes por disfrutar debe ingresar al PortalSAP/autoservicio del Jefe/ mi equipo de trabajo/información general/Selecciono el empleado a consultar/ Notificación de novedades/mostrar cuenta de tiempos. En la pantalla, visualizas el número de días en la columna “restantes”. (recuerde que debe disfrutar del periodo más antiguo al más reciente). \nVer instructivo “Consultar Días de vacaciones acumulados PORTAL JEFE” .\n\n\n####################################################################################################\nVacaciones\n¿Cómo consultar cuantos días de vacaciones tengo pendientes (acumulados) por disfrutar?\nPara consultar los días pendientes por disfrutar debe ingresar al PortalSAP/autoservicio del empleado/ Nomina y gestión de tiempos/Gestión de tiempos/Solicitud novedades de tiempos/ mostrar cuenta de tiempos. En la pantalla, visualizas el número de días en la columna “restantes”. (recuerde que debe disfrutar del periodo más antiguo al más reciente). \nVer instructivo “Consultar Días de vacaciones acumulados PORTAL EMPLEADO”\n ¡Importante! Cuando vas a disfrutar días de un periodo anterior y días del periodo actual, debes solicitar primero los que tienes del anterior, esperar a que tu jefe las apruebe y luego enviar la solicitud del actual. \n\n\n####################################################################################################\nVacaciones\n¿Cómo valido el estado de mi solicitud de vacaciones o si la programación de vacaciones quedó aprobada por mi jefe? \nPara consultar el Estado de mi solicitud de vacaciones, ingresamos por el portal de autoservicio del empleado/Nómina y gestión de Tiempos/ Solicitud Novedades de Tiempos y damos clic en la opción:\n “Mostrar Resumen de absentismo” campo ESTADO. \n“Enviados”: La solicitud está pendiente de aprobación del jefe. \n“Autorizado”: La solicitud ya está aprobada y está en el sistema de nómina para liquidación. \n“Rechazados”: La solicitud está rechazada por el jefe o por el sistema por que se intentó aprobar fuera de fechas. Ver instructivo “Consultar ESTADO aprobación vacaciones PORTAL EMPLEADO” publicado en ¿Y cómo lo hago? / Vacaciones"
+        },
+        {
+            "content": "Para consultar la cantidad de días de vacaciones pendientes, debes seguir los siguientes pasos:\n\n1. Ingresa a la Intranet en la ruta: Para mí > Portal SAP > Autoservicio del empleado (COL) > Nómina y Gestión de Tiempos > Gestión de Tiempos > Resumen de contingentes.\n2. En la columna llamada \"Restante\" encontrarás el número de días pendientes por disfrutar.\n\n### Segundo Paso: Meses no recomendables para salir de vacaciones.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_HC1jNmdZ4koMVpoIgVRvsm9t",
+                    "function": {
+                        "arguments": "{\"query\":\"meses no recomendables para salir de vacaciones\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_HC1jNmdZ4koMVpoIgVRvsm9t",
+            "role": "tool",
+            "name": "rag",
+            "content": "Vacaciones\n¿Cuáles son los meses en los cuales no es recomendable pedir vacaciones debido descuentos de nómina considerables?\nSi casualmente en el mes anterior a la fecha de salida a vacaciones se tienen ingresos de valor considerable diferentes al salario, los descuentos de nómina durante las vacaciones por concepto de “Seguridad Social” (salud, pensión y Fondo de Solidaridad) serán también considerables debido a que estos descuentos se calculan con base en los ingresos del mes anterior a la fecha de salida a vacaciones, en donde también puede caer el pago de las vacaciones extralegales ya que se pagan en la quincena anterior a la fecha de salida. Esta situación ocurre regularmente cuando se toman vacaciones en los meses de enero y Julio porque los ingresos del mes anterior (Junio o Diciembre) se elevan ya que se juntan allí los pagos de la prima semestral de servicios y la prima o bonificación de vacaciones. "
+        },
+        {
+            "content": "No es recomendable pedir vacaciones en los meses de enero y julio. Esto se debe a que en los meses anteriores (diciembre y junio) usualmente se juntan los pagos de la prima semestral de servicios y la prima o bonificación de vacaciones, lo que eleva los ingresos. Por tanto, los descuentos en nómina por seguridad social (salud, pensión y Fondo de Solidaridad) también serán considerables.\n\n### Resumen Final:\n1. **Consultar días pendientes:** Ingresa a la Intranet en la ruta: Para mí > Portal SAP > Autoservicio del empleado (COL) > Nómina y Gestión de Tiempos > Gestión de Tiempos > Resumen de contingentes y visualiza la columna \"Restante\".\n2. **Meses no recomendables:** Evita pedir vacaciones en enero y julio debido a los considerables descuentos de nómina resultantes de los ingresos elevados en los meses anteriores (diciembre y junio).\n\nANSWER[Consultar días pendientes: Ingresa a Intranet en la ruta: Para mí > Portal SAP > Autoservicio del empleado (COL) > Nómina y Gestión de Tiempos > Gestión de Tiempos > Resumen de contingentes y visualiza la columna \"Restante\". Meses no recomendables: evita pedir vacaciones en enero y julio debido a los considerables descuentos de nómina resultantes de los ingresos elevados en los meses anteriores (diciembre y junio).]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

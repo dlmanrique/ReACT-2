@@ -1,0 +1,51 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 8.031317710876465,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Cual es el beneficio que otorga el banco para mi poliza de vehiculos? Y Cuantos vehiculos puedo asegurar en la poliza colectiva de empleados?\n"
+        },
+        {
+            "content": "Tengo que buscar el beneficio que otorga el banco para la poliza de vehiculos y el numero de vehiculos que puedo asegurar en la poliza colectiva de empleados.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_HC1jNmdZ4koMVpoIgVRvsm9t",
+                    "function": {
+                        "arguments": "{\"query\": \"beneficio que otorga el banco para la poliza de vehiculos\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                },
+                {
+                    "id": "call_ydhaI6krz9ZqipJC9ZerD9s4",
+                    "function": {
+                        "arguments": "{\"query\": \"numero de vehiculos que puedo asegurar en la poliza colectiva de empleados\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_HC1jNmdZ4koMVpoIgVRvsm9t",
+            "role": "tool",
+            "name": "rag",
+            "content": "Créditos\n¿Cuál es el beneficio que otorga el banco para mi póliza de vehículos?\nEl Banco otorga un auxilio económico del 25% del valor de la prima para vehículos cuyo valor asegurado no superen los 120 SMMLV, para vehículos que superen ese valor, el empleado debe asumir la diferencia.\nNota: Para los colaboradores que tiene grabado el subsidio del 50% que por política se otorgaba antes del 2005, se les conservará el beneficio, siempre y cuando no pasen más de 3 meses continuos sin tener su carro asegurado, después de este tiempo reingresan con un aporte del 25%.\n\n\n####################################################################################################\nCrédito de vehículo para empleados\nGeneralidades, quién lo puede solicitar, monto y forma de pago\nSi un colaborador requiere información sobre el crédito de vehículo: Cómo es la amortización, la tasa, el tope máximo y los requisitos para este crédito. debemos acompañarlo en el proceso documentado en la siguiente ruta.\nPortal del empleado / Para mí / Mis beneficios / Calidad de vida/ créditos / Crédito de Vehículo\nURL: https://bancolombia.sharepoint.com/sites/co-cvi/SitePages/creditodevehiculo.aspx\n\nCALIDAD DE VIDA\nEste beneficio aplica para empleados cobijados por el estatuto de beneficios.\n\nPrimer crédito\n¿Quiénes pueden solicitar este crédito?\nPueden ser beneficiarios del crédito de vehículo los empleados con contrato a término indefinido que estén desempeñando cargos del mapa de cargos profesionales dentro de la estructura de BANCOLOMBIA, es decir, de nivel igual o superior al de Analista, que demuestren que se caractericen por su consagración al trabajo, destacado rendimiento y lealtad con la institución, y cumplir con los siguientes requisitos:\n•\t1 año de antigüedad en la organización.\n•\tBuen desempeño (concepto del Jefe).\n•\tGarantía Prenda a favor del Banco.\n•\tEl funcionario deberá nombrar beneficiario al Banco, al tomar los seguros de vida, responsabilidad civil, daños y hurto.\n¿Cuánto me prestan?\n•\tCuantía: hasta 13 sueldos básicos o integrales del empleado, con un tope de 120 smmlv.\n¿Cómo lo pago?\n•\tPlazo: 5 años.\n•\tTasa: DTF variable trimestralmente (26 de marzo, 26 de Junio, 26 de Septiembre y 26 de diciembre).\n•\tAmortización sueldo básico: Cuota mensual: intereses y capital, abono semestral en primas => 30% de la prima total, cada prima siguiente se incrementa en el 3% con respecto a la anterior + seguro de vida.\n•\tAmortización salario integral: Cuota que incluye capital e intereses + seguro de vida, cambia trimestralmente.\n\n\n####################################################################################################\nCréditos\n¿Cuántos vehículos puedo asegurar en la póliza colectiva de empleados?\nLos colaboradores pueden asegurar hasta cuatro (4) vehículos Familiares dentro de la Póliza de Autos y acceder a las tarifas preferenciales que ofrecen las pólizas de carácter colectivo. El beneficio del Banco aplica solo para un vehículo, y en el documento de propiedad debe registrar el nombre del colaborador.\n\n\n####################################################################################################\nCréditos\n¿Puedo hacer cambios o modificaciones del beneficio otorgado por el Banco de un carro a otro?\nLos colaboradores podrán hacer modificaciones del beneficio otorgado por el banco solo al momento de la renovación, o cuando surge un proceso de sustitución, donde se retira uno de los vehículos adheridos a la póliza a nombre del empleado y se ingresa otro."
+        },
+        {
+            "tool_call_id": "call_ydhaI6krz9ZqipJC9ZerD9s4",
+            "role": "tool",
+            "name": "rag",
+            "content": "Créditos\n¿Cuántos vehículos puedo asegurar en la póliza colectiva de empleados?\nLos colaboradores pueden asegurar hasta cuatro (4) vehículos Familiares dentro de la Póliza de Autos y acceder a las tarifas preferenciales que ofrecen las pólizas de carácter colectivo. El beneficio del Banco aplica solo para un vehículo, y en el documento de propiedad debe registrar el nombre del colaborador."
+        },
+        {
+            "content": "1. El beneficio que otorga el banco para tu póliza de vehículos es un auxilio económico del 25% del valor de la prima para vehículos cuyo valor asegurado no supere los 120 SMMLV. Para vehículos que superen ese valor, el empleado debe asumir la diferencia.\n2. Los colaboradores pueden asegurar hasta cuatro (4) vehículos familiares dentro de la póliza de autos y acceder a las tarifas preferenciales que ofrecen las pólizas de carácter colectivo. El beneficio del banco aplica solo para un vehículo, y en el documento de propiedad debe registrar el nombre del colaborador.\n\nANSWER[1. El beneficio que otorga el banco para tu póliza de vehículos es un auxilio económico del 25% del valor de la prima para vehículos cuyo valor asegurado no supere los 120 SMMLV. Para vehículos que superen ese valor, el empleado debe asumir la diferencia.\n2. Los colaboradores pueden asegurar hasta cuatro (4) vehículos familiares en la póliza colectiva de empleados.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}

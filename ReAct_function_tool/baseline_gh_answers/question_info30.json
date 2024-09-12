@@ -1,0 +1,51 @@
+{
+    "react_iterations ": 2,
+    "time consumed": 5.037401914596558,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Tanto el auxilio de idiomas como el auxilio de anteojos tienen tope salarial?\n"
+        },
+        {
+            "content": "El siguiente paso es buscar el auxilio de idiomas, el auxilio de anteojos, y ver si tienen tope salarial.",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": [
+                {
+                    "id": "call_wEJQFyuagsYyYVnUkXu3WQMv",
+                    "function": {
+                        "arguments": "{\"query\": \"auxilio de idiomas\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                },
+                {
+                    "id": "call_u627Kd58yCNSurYbDHYAqPLz",
+                    "function": {
+                        "arguments": "{\"query\": \"auxilio de anteojos\"}",
+                        "name": "rag"
+                    },
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "tool_call_id": "call_wEJQFyuagsYyYVnUkXu3WQMv",
+            "role": "tool",
+            "name": "rag",
+            "content": "Auxilios y subsidios\nAUXILIO IDIOMAS\nA partir de la vigencia de la presente convención, el BANCO crea un fondo para auxilios de idiomas para empleados amparados por la Convención Colectiva, por un valor de quinientos millones de pesos ($500.000.000) por cada año convencional.\nPara ser beneficiado con el auxilio de idiomas, el empleado debe realizar la solicitud a través de Conectados (ver instructivo crear solicitud), que estará disponible hasta la distribución total del valor del fondo asignado.\nValor del Auxilio: El auxilio pagado por el Banco podrá ser de hasta el 40% del valor del curso, sin exceder de $400.000 anuales por empleado.\nCondiciones y requisitos para la aprobación:\n•\tAplica para empleados convencionados, con contrato laboral con Bancolombia (fijo e indefinido).\n•\tEl empleado debe estar estudiando al momento de postularse para el auxilio.\n•\tAplica si el idioma está como prerrequisito de grado de una carrera, a través de un curso que se paga independiente a la matrícula de esta.\n•\tAplica para cualquier idioma y sólo se pagará por un curso, en caso de que el empleado este estudiando varios idiomas en forma simultánea. El empleado debe elegir para cual curso solicitará el auxilio.\n•\tEl auxilio de idiomas se debe solicitar una sola vez por año.\n•\tEl valor que se apruebe de auxilio será entregado al empleado a través de nómina, es decir, el pago a la Institución Educativa lo realiza el empleado al 100%.\n•\tEl jefe inmediato será notificado de la solicitud del auxilio de idiomas, no requiere aprobación de jefe.\n•\tEl auxilio no tiene tope salarial y no constituye salario.\n•\t¡Ten en cuenta! Si realizaste un único pago por todo el curso, y solicitaste el auxilio, no hay lugar a posteriores solicitudes del mismo. \n\nDocumento requerido: Certificado vigente emitido por la Institución Educativa Formal y con personería jurídica, donde conste lo siguiente:\n•\tNombre completo y documento del empleado.\n•\tNombre del idioma.\n•\tFactura o comprobante de pago año actual.\n•\tCon estado matriculado y estudiando en la actualidad.\n   \nEn los siguientes escenarios NO aplica el auxilio:\n•\tCursos gratuitos.\n•\tCarrera de idiomas.\n•\tCuando el idioma se encuentra como una materia/asignatura dentro del pensum de una carrera.\n•\tSi al momento del pago del auxilio, el empleado se encuentra retirado de la organización.\n•\tPara \"Aprendices\" o \"Estudiantes en Práctica\" (bajo ninguna modalidad)."
+        },
+        {
+            "tool_call_id": "call_u627Kd58yCNSurYbDHYAqPLz",
+            "role": "tool",
+            "name": "rag",
+            "content": "Auxilios y subsidios\nSUBSIDIOS PARA ANTEOJOS, LENTES DE CONTACTO O CIRUGIA REFRACTIVA:\nPara empleados cobijados por el Estatuto de Beneficios y lo pueden solicitar para:\n* Adquisición o cambio de anteojos o lentes de contacto\n* Cirugías refractivas\n\nPeriodicidad: Cuando se compruebe la necesidad (por una sola vez en el año).  En ningún caso se pagará dos veces al mismo empleado en los últimos 12 meses.\nDocumentos:\n* Factura \"cancelada\" de los anteojos, lentes de contacto o la cirugía refractiva.\n* No se aceptan Fórmulas médicas ni cotizaciones.\n\nPara conocer el valor de auxilio que entrega la organización según el Beneficiario, Tipo Estudio, Término de Contrato, consultalo en el ¿Y cómo lo hago? / Auxilios y subsidios (https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/Auxilios-y-Subsidios.aspx\n\n\n####################################################################################################\nAuxilios y subsidios\nAuxilio de anteojos, lentes de contacto o cirugía refractiva:\nSe puede solicitar para:\n* Adquisición o cambio de anteojos o lentes de contacto\n * Cirugías refractivas\n\nPeriodicidad: Cada vez que se compruebe la necesidad real y justificada del auxilio\nDocumentos requeridos: \n* Fórmula médica para el cambio de anteojos o lentes\n* Cotización o Factura de anteojos, lentes de contacto o cirugía refractiva.\n* Carta aclaratoria del empleado para casos especiales\n\nPara conocer el valor de auxilio que entrega la organización según el Beneficiario, Tipo Estudio, Término de Contrato, consultalo en el ¿Y cómo lo hago? / Auxilios y subsidios (https://bancolombia.sharepoint.com/sites/co-clh/SitePages/gestion-humana/Auxilios-y-Subsidios.aspx)\n\nPara tener en cuenta: \n•\tVigencia del valor del auxilio y del tope salarial: De enero 01/2023 a octubre 31/2023.\n•\tEste auxilio NO constituye salario.\n•\tEl Banco tiene la facultad de hacer seguimiento al uso racional del mismo, solicitando al empleado los respectivos soportes cuando lo considere.\n•\tSe recomienda que la documentación tenga una vigencia no mayor a 3 meses, debido a que esta fecha determinará el valor a pagar, ya que por convención el valor cambia cada año.\n\n\n####################################################################################################\nTOPES Y VALORES AUXILIOS Y SUBSIDIOS\nAUXILIO DE ANTEOJOS, LENTES DE CONTACTO O CIRUGIA REFRACTIVA\nVALOR AUXILIO DE ANTEOJOS, LENTES DE CONTACTO O CIRUGIA REFRACTIVA: $737.042\nTOPE SALARIAL AUXILIO DE ANTEOJOS, LENTES DE CONTACTO O CIRUGIA REFRACTIVA: $5.444.410\n\n\n####################################################################################################\nTOPES Y VALORES AUXILIOS Y SUBSIDIOS\nSUBSIDIO DE ANTEOJOS, LENTES DE CONTACTO O CIRUGIA REFRACTIVA\nVALOR SUBSIDIO DE ANTEOJOS, LENTES DE CONTACTO O CIRUGIA REFRACTIVA: El valor de la factura hasta $613.204. Si el valor de la factura es menor al valor del subsidio, solo se reconocerá el valor de la factura.\nTOPE SALARIAL SUBSIDIO DE ANTEOJOS, LENTES DE CONTACTO O CIRUGIA REFRACTIVA: $4.640.000 (4 SMMLV)"
+        },
+        {
+            "content": "El auxilio de idiomas no tiene tope salarial. \nEl tope salarial del auxilio de anteojos, lentes de contacto o cirugía refractiva es de $5.444.410.\n\nANSWER[El auxilio de idiomas no tiene tope salarial, mientras que el auxilio de anteojos, lentes de contacto o cirugía refractiva tiene un tope salarial de $5.444.410.]",
+            "role": "assistant",
+            "function_call": null,
+            "tool_calls": null
+        }
+    ]
+}
